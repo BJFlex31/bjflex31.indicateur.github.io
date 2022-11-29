@@ -348,7 +348,7 @@ const Dashboard = () => {
             icon={<CIcon icon={cilChartPie} height={36} />}
             color="primary"
             inverse
-            progress={{ value: 83.3 }}
+            progress={{ value: 91.6 }}
             text="Widget helper text"
             title="décembre en attente de remplissage"
             value="83,3%"
