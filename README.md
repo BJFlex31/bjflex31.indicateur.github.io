@@ -13,38 +13,32 @@
 [npm-coreui-react-download]: https://img.shields.io/npm/dm/@coreui/react.svg?style=flat-square
 [npm]: https://www.npmjs.com/package/@coreui/react
 
-# CoreUI Free React Admin Template
+# Dashboard React.JS CoreUI - Indicateur ISO Informatique
 
-CoreUI is meant to be the UX game changer. Pure & transparent code is devoid of redundant components, so the app is light enough to offer ultimate user experience. This means mobile devices also, where the navigation is just as easy and intuitive as on a desktop or laptop. The CoreUI Layout API lets you customize your project for almost any device – be it Mobile, Web or WebApp – CoreUI covers them all!
+Dashboard BJFLEX Informatique, regroupant les indicateurs informatiques (tickets/sauvegardes/haute-dispo).
 
 ## Table of Contents
 
-* [Versions](#versions)
-* [CoreUI Pro](#coreui-pro)
+* [Versions](#indicateur-tickets)
+* [CoreUI Pro](#indicateur-sauvegarde)
+* [CoreUI Pro](#indicateur-pro)
 * [Quick Start](#quick-start)
-* [Installation](#installation)
-* [Basic usage](#basic-usage)
-* [What's included](#whats-included)
-* [Documentation](#documentation)
-* [Versioning](#versioning)
-* [Creators](#creators)
-* [Community](#community)
-* [Support CoreUI Development](#support-coreui-development)
-* [Copyright and License](#copyright-and-license)
 
-## Versions
+## Indicateur Tickets
 
-* [CoreUI Free Bootstrap Admin Template](https://github.com/coreui/coreui-free-bootstrap-admin-template)
-* [CoreUI Free Angular Admin Template](https://github.com/coreui/coreui-free-angular-admin-template)
-* [CoreUI Free React.js Admin Template](https://github.com/coreui/coreui-free-react-admin-template)
-* [CoreUI Free Vue.js Admin Template](https://github.com/coreui/coreui-free-vue-admin-template)
+Le but de cette indicateur est de pouvoir suivre les incidents, les problèmes récurrents etc...
 
-## CoreUI Pro
 
-* 💪  [CoreUI Pro Angular Admin Template](https://coreui.io/product/angular-dashboard-template/)
-* 💪  [CoreUI Pro Bootstrap Admin Template](https://coreui.io/product/bootstrap-dashboard-template/)
-* 💪  [CoreUI Pro React Admin Template](https://coreui.io/product/react-dashboard-template/)
-* 💪  [CoreUI Pro Vue Admin Template](https://coreui.io/product/vue-dashboard-template/)
+## Indicateur Sauvegarde
+
+Cette indicateur lui permet de pouvoir s'ssurer que les backup généres sont bien fonctionnelles et non corrompus le jour ou un incident arrive.
+
+
+## Indicateur Haute Disponibilité
+
+Le but de cette indicateur est d'avoir une vue sur l'année du nombre de minutes ou le serveur est arrêté volontairement et involontairement.
+Objectif : > 1h d'arrêt involontaire
+
 
 ## Quick Start
 
