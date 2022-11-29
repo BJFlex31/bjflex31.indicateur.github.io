@@ -5,7 +5,7 @@ import { CAlert } from '@coreui/react'
 const Dashboard = () => {
   return (
     <>
-      <CAlert color="danger">Accueil en construction</CAlert>
+      <CAlert color="danger">ACCUEIL EN CONSTRUCTION POUR LE MOMENT</CAlert>
     </>
   )
 }
