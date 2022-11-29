@@ -1,935 +1,1782 @@
 import React from 'react'
+import { CRow, CCol } from '@coreui/react'
+import { DocsExample } from 'src/components'
 import {
   CCard,
   CCardBody,
-  CCardGroup,
   CCardHeader,
-  CCol,
-  CLink,
-  CRow,
-  CWidgetStatsB,
-  CWidgetStatsC,
-  CWidgetStatsE,
-  CWidgetStatsF,
+  CTable,
+  CTableBody,
+  CTableDataCell,
+  CTableHead,
+  CTableHeaderCell,
+  CTableRow,
 } from '@coreui/react'
-import { getStyle } from '@coreui/utils'
-import CIcon from '@coreui/icons-react'
-import {
-  cilArrowRight,
-  cilBasket,
-  cilBell,
-  cilChartPie,
-  cilMoon,
-  cilLaptop,
-  cilPeople,
-  cilSettings,
-  cilSpeech,
-  cilSpeedometer,
-  cilUser,
-  cilUserFollow,
-} from '@coreui/icons'
-import { CChartBar, CChartLine } from '@coreui/react-chartjs'
-import { DocsExample } from 'src/components'
-
-import WidgetsBrand from './WidgetsBrand'
-import WidgetsDropdown from './WidgetsDropdown'
 
 const Widgets = () => {
-  const random = (min, max) => Math.floor(Math.random() * (max - min + 1) + min)
-
   return (
-    <CCard className="mb-4">
-      <CCardHeader>Widgets</CCardHeader>
-      <CCardBody>
-        <DocsExample href="/components/widgets/#cwidgetstatsa">
-          <WidgetsDropdown />
-        </DocsExample>
-        <DocsExample href="/components/widgets/#cwidgetstatsb">
-          <CRow>
-            <CCol xs={12} sm={6} lg={3}>
-              <CWidgetStatsB
-                className="mb-4"
-                progress={{ color: 'success', value: 89.9 }}
-                text="Lorem ipsum dolor sit amet enim."
-                title="Widget title"
-                value="89.9%"
-              />
-            </CCol>
-            <CCol xs={12} sm={6} lg={3}>
-              <CWidgetStatsB
-                className="mb-4"
-                value="12.124"
-                title="Widget title"
-                progress={{ color: 'info', value: 89.9 }}
-                text="Lorem ipsum dolor sit amet enim."
-              />
-            </CCol>
-            <CCol xs={12} sm={6} lg={3}>
-              <CWidgetStatsB
-                className="mb-4"
-                value="$98.111,00"
-                title="Widget title"
-                progress={{ color: 'warning', value: 89.9 }}
-                text="Lorem ipsum dolor sit amet enim."
-              />
-            </CCol>
-            <CCol xs={12} sm={6} lg={3}>
-              <CWidgetStatsB
-                className="mb-4"
-                value="2 TB"
-                title="Widget title"
-                progress={{ color: 'primary', value: 89.9 }}
-                text="Lorem ipsum dolor sit amet enim."
-              />
-            </CCol>
-          </CRow>
-        </DocsExample>
-        <DocsExample href="/components/widgets/#cwidgetstatsb">
-          <CRow>
-            <CCol xs={12} sm={6} lg={3}>
-              <CWidgetStatsB
-                className="mb-4"
-                color="success"
-                inverse
-                value="89.9%"
-                title="Widget title"
-                progress={{ value: 89.9 }}
-                text="Lorem ipsum dolor sit amet enim."
-              />
-            </CCol>
-            <CCol xs={12} sm={6} lg={3}>
-              <CWidgetStatsB
-                className="mb-4"
-                color="info"
-                inverse
-                value="12.124"
-                title="Widget title"
-                progress={{ value: 89.9 }}
-                text="Lorem ipsum dolor sit amet enim."
-              />
-            </CCol>
-            <CCol xs={12} sm={6} lg={3}>
-              <CWidgetStatsB
-                className="mb-4"
-                color="warning"
-                inverse
-                value="$98.111,00"
-                title="Widget title"
-                progress={{ value: 89.9 }}
-                text="Lorem ipsum dolor sit amet enim."
-              />
-            </CCol>
-            <CCol xs={12} sm={6} lg={3}>
-              <CWidgetStatsB
-                className="mb-4"
-                color="primary"
-                inverse
-                value="2 TB"
-                title="Widget title"
-                progress={{ value: 89.9 }}
-                text="Lorem ipsum dolor sit amet enim."
-              />
-            </CCol>
-          </CRow>
-        </DocsExample>
-        <DocsExample href="/components/widgets/#cwidgetstatse">
-          <CRow>
-            <CCol sm={4} lg={2}>
-              <CWidgetStatsE
-                chart={
-                  <CChartBar
-                    className="mx-auto"
-                    style={{ height: '40px', width: '80px' }}
-                    data={{
-                      labels: [
-                        'M',
-                        'T',
-                        'W',
-                        'T',
-                        'F',
-                        'S',
-                        'S',
-                        'M',
-                        'T',
-                        'W',
-                        'T',
-                        'F',
-                        'S',
-                        'S',
-                        'M',
-                      ],
-                      datasets: [
-                        {
-                          backgroundColor: getStyle('--cui-danger'),
-                          borderColor: 'transparent',
-                          borderWidth: 1,
-                          data: [
-                            random(40, 100),
-                            random(40, 100),
-                            random(40, 100),
-                            random(40, 100),
-                            random(40, 100),
-                            random(40, 100),
-                            random(40, 100),
-                            random(40, 100),
-                            random(40, 100),
-                            random(40, 100),
-                            random(40, 100),
-                            random(40, 100),
-                            random(40, 100),
-                            random(40, 100),
-                            random(40, 100),
-                          ],
-                        },
-                      ],
-                    }}
-                    options={{
-                      maintainAspectRatio: false,
-                      plugins: {
-                        legend: {
-                          display: false,
-                        },
-                      },
-                      scales: {
-                        x: {
-                          display: false,
-                        },
-                        y: {
-                          display: false,
-                        },
-                      },
-                    }}
-                  />
-                }
-                className="mb-4"
-                title="title"
-                value="1,123"
-              />
-            </CCol>
-            <CCol sm={4} lg={2}>
-              <CWidgetStatsE
-                chart={
-                  <CChartBar
-                    className="mx-auto"
-                    style={{ height: '40px', width: '80px' }}
-                    data={{
-                      labels: [
-                        'M',
-                        'T',
-                        'W',
-                        'T',
-                        'F',
-                        'S',
-                        'S',
-                        'M',
-                        'T',
-                        'W',
-                        'T',
-                        'F',
-                        'S',
-                        'S',
-                        'M',
-                      ],
-                      datasets: [
-                        {
-                          backgroundColor: getStyle('--cui-primary'),
-                          borderColor: 'transparent',
-                          borderWidth: 1,
-                          data: [
-                            random(40, 100),
-                            random(40, 100),
-                            random(40, 100),
-                            random(40, 100),
-                            random(40, 100),
-                            random(40, 100),
-                            random(40, 100),
-                            random(40, 100),
-                            random(40, 100),
-                            random(40, 100),
-                            random(40, 100),
-                            random(40, 100),
-                            random(40, 100),
-                            random(40, 100),
-                            random(40, 100),
-                          ],
-                        },
-                      ],
-                    }}
-                    options={{
-                      maintainAspectRatio: false,
-                      plugins: {
-                        legend: {
-                          display: false,
-                        },
-                      },
-                      scales: {
-                        x: {
-                          display: false,
-                        },
-                        y: {
-                          display: false,
-                        },
-                      },
-                    }}
-                  />
-                }
-                className="mb-4"
-                title="title"
-                value="1,123"
-              />
-            </CCol>
-            <CCol sm={4} lg={2}>
-              <CWidgetStatsE
-                chart={
-                  <CChartBar
-                    className="mx-auto"
-                    style={{ height: '40px', width: '80px' }}
-                    data={{
-                      labels: [
-                        'M',
-                        'T',
-                        'W',
-                        'T',
-                        'F',
-                        'S',
-                        'S',
-                        'M',
-                        'T',
-                        'W',
-                        'T',
-                        'F',
-                        'S',
-                        'S',
-                        'M',
-                      ],
-                      datasets: [
-                        {
-                          backgroundColor: getStyle('--cui-success'),
-                          borderColor: 'transparent',
-                          borderWidth: 1,
-                          data: [
-                            random(40, 100),
-                            random(40, 100),
-                            random(40, 100),
-                            random(40, 100),
-                            random(40, 100),
-                            random(40, 100),
-                            random(40, 100),
-                            random(40, 100),
-                            random(40, 100),
-                            random(40, 100),
-                            random(40, 100),
-                            random(40, 100),
-                            random(40, 100),
-                            random(40, 100),
-                            random(40, 100),
-                          ],
-                        },
-                      ],
-                    }}
-                    options={{
-                      maintainAspectRatio: false,
-                      plugins: {
-                        legend: {
-                          display: false,
-                        },
-                      },
-                      scales: {
-                        x: {
-                          display: false,
-                        },
-                        y: {
-                          display: false,
-                        },
-                      },
-                    }}
-                  />
-                }
-                className="mb-4"
-                title="title"
-                value="1,123"
-              />
-            </CCol>
-            <CCol sm={4} lg={2}>
-              <CWidgetStatsE
-                chart={
-                  <CChartLine
-                    className="mx-auto"
-                    style={{ height: '40px', width: '80px' }}
-                    data={{
-                      labels: [
-                        'M',
-                        'T',
-                        'W',
-                        'T',
-                        'F',
-                        'S',
-                        'S',
-                        'M',
-                        'T',
-                        'W',
-                        'T',
-                        'F',
-                        'S',
-                        'S',
-                        'M',
-                      ],
-                      datasets: [
-                        {
-                          backgroundColor: 'transparent',
-                          borderColor: getStyle('--cui-danger'),
-                          borderWidth: 2,
-                          data: [
-                            random(40, 100),
-                            random(40, 100),
-                            random(40, 100),
-                            random(40, 100),
-                            random(40, 100),
-                            random(40, 100),
-                            random(40, 100),
-                            random(40, 100),
-                            random(40, 100),
-                            random(40, 100),
-                            random(40, 100),
-                            random(40, 100),
-                            random(40, 100),
-                            random(40, 100),
-                            random(40, 100),
-                          ],
-                        },
-                      ],
-                    }}
-                    options={{
-                      maintainAspectRatio: false,
-                      elements: {
-                        line: {
-                          tension: 0.4,
-                        },
-                        point: {
-                          radius: 0,
-                        },
-                      },
-                      plugins: {
-                        legend: {
-                          display: false,
-                        },
-                      },
-                      scales: {
-                        x: {
-                          display: false,
-                        },
-                        y: {
-                          display: false,
-                        },
-                      },
-                    }}
-                  />
-                }
-                className="mb-4"
-                title="title"
-                value="1,123"
-              />
-            </CCol>
-            <CCol sm={4} lg={2}>
-              <CWidgetStatsE
-                chart={
-                  <CChartLine
-                    className="mx-auto"
-                    style={{ height: '40px', width: '80px' }}
-                    data={{
-                      labels: [
-                        'M',
-                        'T',
-                        'W',
-                        'T',
-                        'F',
-                        'S',
-                        'S',
-                        'M',
-                        'T',
-                        'W',
-                        'T',
-                        'F',
-                        'S',
-                        'S',
-                        'M',
-                      ],
-                      datasets: [
-                        {
-                          backgroundColor: 'transparent',
-                          borderColor: getStyle('--cui-success'),
-                          borderWidth: 2,
-                          data: [
-                            random(40, 100),
-                            random(40, 100),
-                            random(40, 100),
-                            random(40, 100),
-                            random(40, 100),
-                            random(40, 100),
-                            random(40, 100),
-                            random(40, 100),
-                            random(40, 100),
-                            random(40, 100),
-                            random(40, 100),
-                            random(40, 100),
-                            random(40, 100),
-                            random(40, 100),
-                            random(40, 100),
-                          ],
-                        },
-                      ],
-                    }}
-                    options={{
-                      maintainAspectRatio: false,
-                      elements: {
-                        line: {
-                          tension: 0.4,
-                        },
-                        point: {
-                          radius: 0,
-                        },
-                      },
-                      plugins: {
-                        legend: {
-                          display: false,
-                        },
-                      },
-                      scales: {
-                        x: {
-                          display: false,
-                        },
-                        y: {
-                          display: false,
-                        },
-                      },
-                    }}
-                  />
-                }
-                className="mb-4"
-                title="title"
-                value="1,123"
-              />
-            </CCol>
-            <CCol sm={4} lg={2}>
-              <CWidgetStatsE
-                chart={
-                  <CChartLine
-                    className="mx-auto"
-                    style={{ height: '40px', width: '80px' }}
-                    data={{
-                      labels: [
-                        'M',
-                        'T',
-                        'W',
-                        'T',
-                        'F',
-                        'S',
-                        'S',
-                        'M',
-                        'T',
-                        'W',
-                        'T',
-                        'F',
-                        'S',
-                        'S',
-                        'M',
-                      ],
-                      datasets: [
-                        {
-                          backgroundColor: 'transparent',
-                          borderColor: getStyle('--cui-info'),
-                          borderWidth: 2,
-                          data: [
-                            random(40, 100),
-                            random(40, 100),
-                            random(40, 100),
-                            random(40, 100),
-                            random(40, 100),
-                            random(40, 100),
-                            random(40, 100),
-                            random(40, 100),
-                            random(40, 100),
-                            random(40, 100),
-                            random(40, 100),
-                            random(40, 100),
-                            random(40, 100),
-                            random(40, 100),
-                            random(40, 100),
-                          ],
-                        },
-                      ],
-                    }}
-                    options={{
-                      maintainAspectRatio: false,
-                      elements: {
-                        line: {
-                          tension: 0.4,
-                        },
-                        point: {
-                          radius: 0,
-                        },
-                      },
-                      plugins: {
-                        legend: {
-                          display: false,
-                        },
-                      },
-                      scales: {
-                        x: {
-                          display: false,
-                        },
-                        y: {
-                          display: false,
-                        },
-                      },
-                    }}
-                  />
-                }
-                className="mb-4"
-                title="title"
-                value="1,123"
-              />
-            </CCol>
-          </CRow>
-        </DocsExample>
-        <DocsExample href="/components/widgets/#cwidgetstatsf">
-          <CRow>
-            <CCol xs={12} sm={6} lg={3}>
-              <CWidgetStatsF
-                className="mb-3"
-                icon={<CIcon width={24} icon={cilSettings} size="xl" />}
-                title="income"
-                value="$1.999,50"
-                color="primary"
-              />
-            </CCol>
-            <CCol xs={12} sm={6} lg={3}>
-              <CWidgetStatsF
-                className="mb-3"
-                icon={<CIcon width={24} icon={cilUser} size="xl" />}
-                title="income"
-                value="$1.999,50"
-                color="info"
-              />
-            </CCol>
-            <CCol xs={12} sm={6} lg={3}>
-              <CWidgetStatsF
-                className="mb-3"
-                icon={<CIcon width={24} icon={cilMoon} size="xl" />}
-                title="income"
-                value="$1.999,50"
-                color="warning"
-              />
-            </CCol>
-            <CCol xs={12} sm={6} lg={3}>
-              <CWidgetStatsF
-                className="mb-3"
-                icon={<CIcon width={24} icon={cilBell} size="xl" />}
-                title="income"
-                value="$1.999,50"
-                color="danger"
-              />
-            </CCol>
-          </CRow>
-        </DocsExample>
-        <DocsExample href="/components/widgets/#cwidgetstatsf">
-          <CRow>
-            <CCol xs={12} sm={6} lg={3}>
-              <CWidgetStatsF
-                className="mb-3"
-                icon={<CIcon width={24} icon={cilSettings} size="xl" />}
-                title="income"
-                value="$1.999,50"
-                color="primary"
-                footer={
-                  <CLink
-                    className="font-weight-bold font-xs text-medium-emphasis"
-                    href="https://coreui.io/"
-                    rel="noopener norefferer"
-                    target="_blank"
-                  >
-                    View more
-                    <CIcon icon={cilArrowRight} className="float-end" width={16} />
-                  </CLink>
-                }
-              />
-            </CCol>
-            <CCol xs={12} sm={6} lg={3}>
-              <CWidgetStatsF
-                className="mb-3"
-                icon={<CIcon width={24} icon={cilLaptop} size="xl" />}
-                title="income"
-                value="$1.999,50"
-                color="info"
-                footer={
-                  <CLink
-                    className="font-weight-bold font-xs text-medium-emphasis"
-                    href="https://coreui.io/"
-                    rel="noopener norefferer"
-                    target="_blank"
-                  >
-                    View more
-                    <CIcon icon={cilArrowRight} className="float-end" width={16} />
-                  </CLink>
-                }
-              />
-            </CCol>
-            <CCol xs={12} sm={6} lg={3}>
-              <CWidgetStatsF
-                className="mb-3"
-                icon={<CIcon width={24} icon={cilMoon} size="xl" />}
-                title="income"
-                value="$1.999,50"
-                color="warning"
-                footer={
-                  <CLink
-                    className="font-weight-bold font-xs text-medium-emphasis"
-                    href="https://coreui.io/"
-                    rel="noopener norefferer"
-                    target="_blank"
-                  >
-                    View more
-                    <CIcon icon={cilArrowRight} className="float-end" width={16} />
-                  </CLink>
-                }
-              />
-            </CCol>
-            <CCol xs={12} sm={6} lg={3}>
-              <CWidgetStatsF
-                className="mb-3"
-                icon={<CIcon width={24} icon={cilBell} size="xl" />}
-                title="income"
-                value="$1.999,50"
-                color="danger"
-                footer={
-                  <CLink
-                    className="font-weight-bold font-xs text-medium-emphasis"
-                    href="https://coreui.io/"
-                    rel="noopener norefferer"
-                    target="_blank"
-                  >
-                    View more
-                    <CIcon icon={cilArrowRight} className="float-end" width={16} />
-                  </CLink>
-                }
-              />
-            </CCol>
-          </CRow>
-        </DocsExample>
-        <DocsExample href="/components/widgets/#cwidgetstatsf">
-          <CRow>
-            <CCol xs={12} sm={6} lg={3}>
-              <CWidgetStatsF
-                className="mb-3"
-                icon={<CIcon width={24} icon={cilSettings} size="xl" />}
-                padding={false}
-                title="income"
-                value="$1.999,50"
-                color="primary"
-              />
-            </CCol>
-            <CCol xs={12} sm={6} lg={3}>
-              <CWidgetStatsF
-                className="mb-3"
-                icon={<CIcon width={24} icon={cilUser} size="xl" />}
-                padding={false}
-                title="income"
-                value="$1.999,50"
-                color="info"
-              />
-            </CCol>
-            <CCol xs={12} sm={6} lg={3}>
-              <CWidgetStatsF
-                className="mb-3"
-                icon={<CIcon width={24} icon={cilMoon} size="xl" />}
-                padding={false}
-                title="income"
-                value="$1.999,50"
-                color="warning"
-              />
-            </CCol>
-            <CCol xs={12} sm={6} lg={3}>
-              <CWidgetStatsF
-                className="mb-3"
-                icon={<CIcon width={24} icon={cilBell} size="xl" />}
-                padding={false}
-                title="income"
-                value="$1.999,50"
-                color="danger"
-              />
-            </CCol>
-          </CRow>
-        </DocsExample>
-        <DocsExample href="/components/widgets/#cwidgetstatsd">
-          <WidgetsBrand />
-        </DocsExample>
-        <DocsExample href="/components/widgets/#cwidgetstatsd">
-          <WidgetsBrand withCharts />
-        </DocsExample>
-        <DocsExample href="/components/widgets/#cwidgetstatsc">
-          <CCardGroup className="mb-4">
-            <CWidgetStatsC
-              icon={<CIcon icon={cilPeople} height={36} />}
-              value="87.500"
-              title="Visitors"
-              progress={{ color: 'info', value: 75 }}
-            />
-            <CWidgetStatsC
-              icon={<CIcon icon={cilUserFollow} height={36} />}
-              value="385"
-              title="New Clients"
-              progress={{ color: 'success', value: 75 }}
-            />
-            <CWidgetStatsC
-              icon={<CIcon icon={cilBasket} height={36} />}
-              value="1238"
-              title="Products sold"
-              progress={{ color: 'warning', value: 75 }}
-            />
-            <CWidgetStatsC
-              icon={<CIcon icon={cilChartPie} height={36} />}
-              value="28%"
-              title="Returning Visitors"
-              progress={{ color: 'primary', value: 75 }}
-            />
-            <CWidgetStatsC
-              icon={<CIcon icon={cilSpeedometer} height={36} />}
-              value="5:34:11"
-              title="Avg. Time"
-              progress={{ color: 'danger', value: 75 }}
-            />
-          </CCardGroup>
-        </DocsExample>
-        <DocsExample href="/components/widgets/#cwidgetstatsc">
-          <CRow>
-            <CCol sm={6} md={2}>
-              <CWidgetStatsC
-                icon={<CIcon icon={cilPeople} height={36} />}
-                value="87.500"
-                title="Visitors"
-                progress={{ color: 'info', value: 75 }}
-                className="mb-4"
-              />
-            </CCol>
-            <CCol sm={6} md={2}>
-              <CWidgetStatsC
-                icon={<CIcon icon={cilUserFollow} height={36} />}
-                value="385"
-                title="New Clients"
-                progress={{ color: 'success', value: 75 }}
-                className="mb-4"
-              />
-            </CCol>
-            <CCol sm={6} md={2}>
-              <CWidgetStatsC
-                icon={<CIcon icon={cilBasket} height={36} />}
-                value="1238"
-                title="Products sold"
-                progress={{ color: 'warning', value: 75 }}
-                className="mb-4"
-              />
-            </CCol>
-            <CCol sm={6} md={2}>
-              <CWidgetStatsC
-                icon={<CIcon icon={cilChartPie} height={36} />}
-                value="28%"
-                title="Returning Visitors"
-                progress={{ color: 'primary', value: 75 }}
-                className="mb-4"
-              />
-            </CCol>
-            <CCol sm={6} md={2}>
-              <CWidgetStatsC
-                icon={<CIcon icon={cilSpeedometer} height={36} />}
-                value="5:34:11"
-                title="Avg. Time"
-                progress={{ color: 'danger', value: 75 }}
-                className="mb-4"
-              />
-            </CCol>
-            <CCol sm={6} md={2}>
-              <CWidgetStatsC
-                icon={<CIcon icon={cilSpeech} height={36} />}
-                value="972"
-                title="comments"
-                progress={{ color: 'info', value: 75 }}
-                className="mb-4"
-              />
-            </CCol>
-          </CRow>
-        </DocsExample>
-        <DocsExample href="/components/widgets/#cwidgetstatsc">
-          <CRow>
-            <CCol sm={6} md={2}>
-              <CWidgetStatsC
-                color="info"
-                icon={<CIcon icon={cilPeople} height={36} />}
-                value="87.500"
-                title="Visitors"
-                inverse
-                progress={{ value: 75 }}
-                className="mb-4"
-              />
-            </CCol>
-            <CCol sm={6} md={2}>
-              <CWidgetStatsC
-                color="success"
-                icon={<CIcon icon={cilUserFollow} height={36} />}
-                value="385"
-                title="New Clients"
-                inverse
-                progress={{ value: 75 }}
-                className="mb-4"
-              />
-            </CCol>
-            <CCol sm={6} md={2}>
-              <CWidgetStatsC
-                color="warning"
-                icon={<CIcon icon={cilBasket} height={36} />}
-                value="1238"
-                title="Products sold"
-                inverse
-                progress={{ value: 75 }}
-                className="mb-4"
-              />
-            </CCol>
-            <CCol sm={6} md={2}>
-              <CWidgetStatsC
-                color="primary"
-                icon={<CIcon icon={cilChartPie} height={36} />}
-                value="28%"
-                title="Returning Visitors"
-                inverse
-                progress={{ value: 75 }}
-                className="mb-4"
-              />
-            </CCol>
-            <CCol sm={6} md={2}>
-              <CWidgetStatsC
-                color="danger"
-                icon={<CIcon icon={cilSpeedometer} height={36} />}
-                value="5:34:11"
-                title="Avg. Time"
-                inverse
-                progress={{ value: 75 }}
-                className="mb-4"
-              />
-            </CCol>
-            <CCol sm={6} md={2}>
-              <CWidgetStatsC
-                color="info"
-                icon={<CIcon icon={cilSpeech} height={36} />}
-                value="972"
-                title="comments"
-                inverse
-                progress={{ value: 75 }}
-                className="mb-4"
-              />
-            </CCol>
-          </CRow>
-        </DocsExample>
-      </CCardBody>
-    </CCard>
+    <CRow>
+      <CCol xs={12}>
+        <CCard className="mb-4">
+          <CCardHeader>
+            <strong>Décemebre 2022 : Historiques des sauvegardes BDD + Clipper sur 2022</strong>
+          </CCardHeader>
+          <CCardBody>
+            <DocsExample href="components/table">
+              <CTable>
+                <CTableHead>
+                  <CTableRow>
+                    <CTableHeaderCell scope="col">#</CTableHeaderCell>
+                    <CTableHeaderCell scope="col">Date</CTableHeaderCell>
+                    <CTableHeaderCell scope="col">Arret volontaire</CTableHeaderCell>
+                    <CTableHeaderCell scope="col">Arret non-volontaire</CTableHeaderCell>
+                  </CTableRow>
+                </CTableHead>
+                <CTableBody>
+                  <CTableRow>
+                    <CTableHeaderCell scope="row">1</CTableHeaderCell>
+                    <CTableDataCell>01/12/22</CTableDataCell>
+                    <CTableDataCell></CTableDataCell>
+                    <CTableDataCell></CTableDataCell>
+                  </CTableRow>
+                  <CTableRow>
+                    <CTableHeaderCell scope="row">2</CTableHeaderCell>
+                    <CTableDataCell>02/12/22</CTableDataCell>
+                    <CTableDataCell></CTableDataCell>
+                    <CTableDataCell></CTableDataCell>
+                  </CTableRow>
+                  <CTableRow>
+                    <CTableHeaderCell scope="row">3</CTableHeaderCell>
+                    <CTableDataCell>05/12/22</CTableDataCell>
+                    <CTableDataCell></CTableDataCell>
+                    <CTableDataCell></CTableDataCell>
+                  </CTableRow>
+                  <CTableRow>
+                    <CTableHeaderCell scope="row">4</CTableHeaderCell>
+                    <CTableDataCell>06/12/22</CTableDataCell>
+                    <CTableDataCell></CTableDataCell>
+                    <CTableDataCell></CTableDataCell>
+                  </CTableRow>
+                  <CTableRow>
+                    <CTableHeaderCell scope="row">5</CTableHeaderCell>
+                    <CTableDataCell>07/12/22</CTableDataCell>
+                    <CTableDataCell></CTableDataCell>
+                    <CTableDataCell></CTableDataCell>
+                  </CTableRow>
+                  <CTableRow>
+                    <CTableHeaderCell scope="row">6</CTableHeaderCell>
+                    <CTableDataCell>08/12/22</CTableDataCell>
+                    <CTableDataCell></CTableDataCell>
+                    <CTableDataCell></CTableDataCell>
+                  </CTableRow>
+                  <CTableRow>
+                    <CTableHeaderCell scope="row">7</CTableHeaderCell>
+                    <CTableDataCell>09/12/22</CTableDataCell>
+                    <CTableDataCell></CTableDataCell>
+                    <CTableDataCell></CTableDataCell>
+                  </CTableRow>
+                  <CTableRow>
+                    <CTableHeaderCell scope="row">8</CTableHeaderCell>
+                    <CTableDataCell>12/12/22</CTableDataCell>
+                    <CTableDataCell></CTableDataCell>
+                    <CTableDataCell></CTableDataCell>
+                  </CTableRow>
+                  <CTableRow>
+                    <CTableHeaderCell scope="row">9</CTableHeaderCell>
+                    <CTableDataCell>13/12/22</CTableDataCell>
+                    <CTableDataCell></CTableDataCell>
+                    <CTableDataCell></CTableDataCell>
+                  </CTableRow>
+                  <CTableRow>
+                    <CTableHeaderCell scope="row">10</CTableHeaderCell>
+                    <CTableDataCell>14/12/22</CTableDataCell>
+                    <CTableDataCell></CTableDataCell>
+                    <CTableDataCell></CTableDataCell>
+                  </CTableRow>
+                  <CTableRow>
+                    <CTableHeaderCell scope="row">11</CTableHeaderCell>
+                    <CTableDataCell>15/12/22</CTableDataCell>
+                    <CTableDataCell></CTableDataCell>
+                    <CTableDataCell></CTableDataCell>
+                  </CTableRow>
+                  <CTableRow>
+                    <CTableHeaderCell scope="row">12</CTableHeaderCell>
+                    <CTableDataCell>16/12/22</CTableDataCell>
+                    <CTableDataCell></CTableDataCell>
+                    <CTableDataCell></CTableDataCell>
+                  </CTableRow>
+                  <CTableRow>
+                    <CTableHeaderCell scope="row">13</CTableHeaderCell>
+                    <CTableDataCell>19/12/22</CTableDataCell>
+                    <CTableDataCell></CTableDataCell>
+                    <CTableDataCell></CTableDataCell>
+                  </CTableRow>
+                  <CTableRow>
+                    <CTableHeaderCell scope="row">14</CTableHeaderCell>
+                    <CTableDataCell>20/12/22</CTableDataCell>
+                    <CTableDataCell></CTableDataCell>
+                    <CTableDataCell></CTableDataCell>
+                  </CTableRow>
+                  <CTableRow>
+                    <CTableHeaderCell scope="row">15</CTableHeaderCell>
+                    <CTableDataCell>21/12/22</CTableDataCell>
+                    <CTableDataCell></CTableDataCell>
+                    <CTableDataCell></CTableDataCell>
+                  </CTableRow>
+                  <CTableRow>
+                    <CTableHeaderCell scope="row">16</CTableHeaderCell>
+                    <CTableDataCell>22/12/22</CTableDataCell>
+                    <CTableDataCell></CTableDataCell>
+                    <CTableDataCell></CTableDataCell>
+                  </CTableRow>
+                  <CTableRow>
+                    <CTableHeaderCell scope="row">17</CTableHeaderCell>
+                    <CTableDataCell>23/12/22</CTableDataCell>
+                    <CTableDataCell></CTableDataCell>
+                    <CTableDataCell></CTableDataCell>
+                  </CTableRow>
+                  <CTableRow>
+                    <CTableHeaderCell scope="row">18</CTableHeaderCell>
+                    <CTableDataCell>26/12/22</CTableDataCell>
+                    <CTableDataCell></CTableDataCell>
+                    <CTableDataCell></CTableDataCell>
+                  </CTableRow>
+                  <CTableRow>
+                    <CTableHeaderCell scope="row">19</CTableHeaderCell>
+                    <CTableDataCell>27/12/22</CTableDataCell>
+                    <CTableDataCell></CTableDataCell>
+                    <CTableDataCell></CTableDataCell>
+                  </CTableRow>
+                  <CTableRow>
+                    <CTableHeaderCell scope="row">20</CTableHeaderCell>
+                    <CTableDataCell>28/12/22</CTableDataCell>
+                    <CTableDataCell></CTableDataCell>
+                    <CTableDataCell></CTableDataCell>
+                  </CTableRow>
+                  <CTableRow>
+                    <CTableHeaderCell scope="row">21</CTableHeaderCell>
+                    <CTableDataCell>29/12/22</CTableDataCell>
+                    <CTableDataCell></CTableDataCell>
+                    <CTableDataCell></CTableDataCell>
+                  </CTableRow>
+                </CTableBody>
+              </CTable>
+            </DocsExample>
+          </CCardBody>
+        </CCard>
+        <CCard className="mb-4">
+          <CCardHeader>
+            <strong>Novemebre 2022 : Historiques des sauvegardes BDD + Clipper sur 2022</strong>
+          </CCardHeader>
+          <CCardBody>
+            <DocsExample href="components/table">
+              <CTable>
+                <CTableHead>
+                  <CTableRow>
+                    <CTableHeaderCell scope="col">#</CTableHeaderCell>
+                    <CTableHeaderCell scope="col">Date Backup</CTableHeaderCell>
+                    <CTableHeaderCell scope="col">Backup serveur</CTableHeaderCell>
+                    <CTableHeaderCell scope="col">Backup Clipper</CTableHeaderCell>
+                  </CTableRow>
+                </CTableHead>
+                <CTableBody>
+                  <CTableRow>
+                    <CTableHeaderCell scope="row">1</CTableHeaderCell>
+                    <CTableDataCell>01/11/22</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                  </CTableRow>
+                  <CTableRow>
+                    <CTableHeaderCell scope="row">2</CTableHeaderCell>
+                    <CTableDataCell>02/11/22</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                  </CTableRow>
+                  <CTableRow>
+                    <CTableHeaderCell scope="row">3</CTableHeaderCell>
+                    <CTableDataCell>03/11/22</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                  </CTableRow>
+                  <CTableRow>
+                    <CTableHeaderCell scope="row">4</CTableHeaderCell>
+                    <CTableDataCell>04/11/22</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                  </CTableRow>
+                  <CTableRow>
+                    <CTableHeaderCell scope="row">5</CTableHeaderCell>
+                    <CTableDataCell>07/11/22</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                  </CTableRow>
+                  <CTableRow>
+                    <CTableHeaderCell scope="row">6</CTableHeaderCell>
+                    <CTableDataCell>08/11/22</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                  </CTableRow>
+                  <CTableRow>
+                    <CTableHeaderCell scope="row">7</CTableHeaderCell>
+                    <CTableDataCell>09/11/22</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                  </CTableRow>
+                  <CTableRow>
+                    <CTableHeaderCell scope="row">8</CTableHeaderCell>
+                    <CTableDataCell>10/11/22</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                  </CTableRow>
+                  <CTableRow>
+                    <CTableHeaderCell scope="row">9</CTableHeaderCell>
+                    <CTableDataCell>11/11/22</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                  </CTableRow>
+                  <CTableRow>
+                    <CTableHeaderCell scope="row">10</CTableHeaderCell>
+                    <CTableDataCell>14/11/22</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                  </CTableRow>
+                  <CTableRow>
+                    <CTableHeaderCell scope="row">11</CTableHeaderCell>
+                    <CTableDataCell>15/11/22</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                  </CTableRow>
+                  <CTableRow>
+                    <CTableHeaderCell scope="row">12</CTableHeaderCell>
+                    <CTableDataCell>16/11/22</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                  </CTableRow>
+                  <CTableRow>
+                    <CTableHeaderCell scope="row">13</CTableHeaderCell>
+                    <CTableDataCell>17/11/22</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                  </CTableRow>
+                  <CTableRow>
+                    <CTableHeaderCell scope="row">14</CTableHeaderCell>
+                    <CTableDataCell>18/11/22</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                  </CTableRow>
+                  <CTableRow>
+                    <CTableHeaderCell scope="row">15</CTableHeaderCell>
+                    <CTableDataCell>21/11/22</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                  </CTableRow>
+                  <CTableRow>
+                    <CTableHeaderCell scope="row">16</CTableHeaderCell>
+                    <CTableDataCell>22/11/22</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                  </CTableRow>
+                  <CTableRow>
+                    <CTableHeaderCell scope="row">17</CTableHeaderCell>
+                    <CTableDataCell>23/11/22</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                  </CTableRow>
+                  <CTableRow>
+                    <CTableHeaderCell scope="row">18</CTableHeaderCell>
+                    <CTableDataCell>24/11/22</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                  </CTableRow>
+                  <CTableRow>
+                    <CTableHeaderCell scope="row">19</CTableHeaderCell>
+                    <CTableDataCell>25/11/22</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                  </CTableRow>
+                  <CTableRow>
+                    <CTableHeaderCell scope="row">20</CTableHeaderCell>
+                    <CTableDataCell>28/11/22</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                  </CTableRow>
+                  <CTableRow>
+                    <CTableHeaderCell scope="row">21</CTableHeaderCell>
+                    <CTableDataCell>29/11/22</CTableDataCell>
+                    <CTableDataCell></CTableDataCell>
+                    <CTableDataCell></CTableDataCell>
+                  </CTableRow>
+                  <CTableRow>
+                    <CTableHeaderCell scope="row">22</CTableHeaderCell>
+                    <CTableDataCell>30/11/22</CTableDataCell>
+                    <CTableDataCell></CTableDataCell>
+                    <CTableDataCell></CTableDataCell>
+                  </CTableRow>
+                </CTableBody>
+              </CTable>
+            </DocsExample>
+          </CCardBody>
+        </CCard>
+        <CCard className="mb-4">
+          <CCardHeader>
+            <strong>Octobre 2022 : Historiques des sauvegardes BDD + Clipper sur 2022</strong>
+          </CCardHeader>
+          <CCardBody>
+            <DocsExample href="components/table">
+              <CTable>
+                <CTableHead>
+                  <CTableRow>
+                    <CTableHeaderCell scope="col">#</CTableHeaderCell>
+                    <CTableHeaderCell scope="col">Date Backup</CTableHeaderCell>
+                    <CTableHeaderCell scope="col">Backup serveur</CTableHeaderCell>
+                    <CTableHeaderCell scope="col">Backup Clipper</CTableHeaderCell>
+                  </CTableRow>
+                </CTableHead>
+                <CTableBody>
+                  <CTableRow>
+                    <CTableHeaderCell scope="row">1</CTableHeaderCell>
+                    <CTableDataCell>03/10/22</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                  </CTableRow>
+                  <CTableRow>
+                    <CTableHeaderCell scope="row">2</CTableHeaderCell>
+                    <CTableDataCell>04/10/22</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                  </CTableRow>
+                  <CTableRow>
+                    <CTableHeaderCell scope="row">3</CTableHeaderCell>
+                    <CTableDataCell>05/10/22</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                  </CTableRow>
+                  <CTableRow>
+                    <CTableHeaderCell scope="row">4</CTableHeaderCell>
+                    <CTableDataCell>06/10/22</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                  </CTableRow>
+                  <CTableRow>
+                    <CTableHeaderCell scope="row">5</CTableHeaderCell>
+                    <CTableDataCell>07/10/22</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                  </CTableRow>
+                  <CTableRow>
+                    <CTableHeaderCell scope="row">6</CTableHeaderCell>
+                    <CTableDataCell>10/10/22</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                  </CTableRow>
+                  <CTableRow>
+                    <CTableHeaderCell scope="row">7</CTableHeaderCell>
+                    <CTableDataCell>11/10/22</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                  </CTableRow>
+                  <CTableRow>
+                    <CTableHeaderCell scope="row">8</CTableHeaderCell>
+                    <CTableDataCell>12/10/22</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                  </CTableRow>
+                  <CTableRow>
+                    <CTableHeaderCell scope="row">9</CTableHeaderCell>
+                    <CTableDataCell>13/10/22</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                  </CTableRow>
+                  <CTableRow>
+                    <CTableHeaderCell scope="row">10</CTableHeaderCell>
+                    <CTableDataCell>14/10/22</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                  </CTableRow>
+                  <CTableRow>
+                    <CTableHeaderCell scope="row">11</CTableHeaderCell>
+                    <CTableDataCell>17/10/22</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                  </CTableRow>
+                  <CTableRow>
+                    <CTableHeaderCell scope="row">12</CTableHeaderCell>
+                    <CTableDataCell>18/10/22</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                  </CTableRow>
+                  <CTableRow>
+                    <CTableHeaderCell scope="row">13</CTableHeaderCell>
+                    <CTableDataCell>19/10/22</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                  </CTableRow>
+                  <CTableRow>
+                    <CTableHeaderCell scope="row">14</CTableHeaderCell>
+                    <CTableDataCell>20/10/22</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                  </CTableRow>
+                  <CTableRow>
+                    <CTableHeaderCell scope="row">15</CTableHeaderCell>
+                    <CTableDataCell>21/10/22</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                  </CTableRow>
+                  <CTableRow>
+                    <CTableHeaderCell scope="row">16</CTableHeaderCell>
+                    <CTableDataCell>24/10/22</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                  </CTableRow>
+                  <CTableRow>
+                    <CTableHeaderCell scope="row">17</CTableHeaderCell>
+                    <CTableDataCell>25/10/22</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                  </CTableRow>
+                  <CTableRow>
+                    <CTableHeaderCell scope="row">18</CTableHeaderCell>
+                    <CTableDataCell>26/10/22</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                  </CTableRow>
+                  <CTableRow>
+                    <CTableHeaderCell scope="row">19</CTableHeaderCell>
+                    <CTableDataCell>27/10/22</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                  </CTableRow>
+                  <CTableRow>
+                    <CTableHeaderCell scope="row">20</CTableHeaderCell>
+                    <CTableDataCell>28/10/22</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                  </CTableRow>
+                  <CTableRow>
+                    <CTableHeaderCell scope="row">21</CTableHeaderCell>
+                    <CTableDataCell>31/10/22</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                  </CTableRow>
+                </CTableBody>
+              </CTable>
+            </DocsExample>
+          </CCardBody>
+        </CCard>
+        <CCard className="mb-4">
+          <CCardHeader>
+            <strong>Septembre 2022 : Historiques des sauvegardes BDD + Clipper sur 2022</strong>
+          </CCardHeader>
+          <CCardBody>
+            <DocsExample href="components/table">
+              <CTable>
+                <CTableHead>
+                  <CTableRow>
+                    <CTableHeaderCell scope="col">#</CTableHeaderCell>
+                    <CTableHeaderCell scope="col">Date Backup</CTableHeaderCell>
+                    <CTableHeaderCell scope="col">Backup serveur</CTableHeaderCell>
+                    <CTableHeaderCell scope="col">Backup Clipper</CTableHeaderCell>
+                  </CTableRow>
+                </CTableHead>
+                <CTableBody>
+                  <CTableRow>
+                    <CTableHeaderCell scope="row">1</CTableHeaderCell>
+                    <CTableDataCell>01/09/22</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                  </CTableRow>
+                  <CTableRow>
+                    <CTableHeaderCell scope="row">2</CTableHeaderCell>
+                    <CTableDataCell>02/09/22</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                  </CTableRow>
+                  <CTableRow>
+                    <CTableHeaderCell scope="row">3</CTableHeaderCell>
+                    <CTableDataCell>05/09/22</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                  </CTableRow>
+                  <CTableRow>
+                    <CTableHeaderCell scope="row">4</CTableHeaderCell>
+                    <CTableDataCell>06/09/22</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                  </CTableRow>
+                  <CTableRow>
+                    <CTableHeaderCell scope="row">5</CTableHeaderCell>
+                    <CTableDataCell>07/09/22</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                  </CTableRow>
+                  <CTableRow>
+                    <CTableHeaderCell scope="row">6</CTableHeaderCell>
+                    <CTableDataCell>08/09/22</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                  </CTableRow>
+                  <CTableRow>
+                    <CTableHeaderCell scope="row">7</CTableHeaderCell>
+                    <CTableDataCell>09/09/22</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                  </CTableRow>
+                  <CTableRow>
+                    <CTableHeaderCell scope="row">8</CTableHeaderCell>
+                    <CTableDataCell>12/09/22</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                  </CTableRow>
+                  <CTableRow>
+                    <CTableHeaderCell scope="row">9</CTableHeaderCell>
+                    <CTableDataCell>13/09/22</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                  </CTableRow>
+                  <CTableRow>
+                    <CTableHeaderCell scope="row">10</CTableHeaderCell>
+                    <CTableDataCell>14/09/22</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                  </CTableRow>
+                  <CTableRow>
+                    <CTableHeaderCell scope="row">11</CTableHeaderCell>
+                    <CTableDataCell>15/09/22</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                  </CTableRow>
+                  <CTableRow>
+                    <CTableHeaderCell scope="row">12</CTableHeaderCell>
+                    <CTableDataCell>16/09/22</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                  </CTableRow>
+                  <CTableRow>
+                    <CTableHeaderCell scope="row">13</CTableHeaderCell>
+                    <CTableDataCell>19/09/22</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                  </CTableRow>
+                  <CTableRow>
+                    <CTableHeaderCell scope="row">14</CTableHeaderCell>
+                    <CTableDataCell>20/09/22</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                  </CTableRow>
+                  <CTableRow>
+                    <CTableHeaderCell scope="row">15</CTableHeaderCell>
+                    <CTableDataCell>21/09/22</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                  </CTableRow>
+                  <CTableRow>
+                    <CTableHeaderCell scope="row">16</CTableHeaderCell>
+                    <CTableDataCell>22/09/22</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                  </CTableRow>
+                  <CTableRow>
+                    <CTableHeaderCell scope="row">17</CTableHeaderCell>
+                    <CTableDataCell>23/09/22</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                  </CTableRow>
+                  <CTableRow>
+                    <CTableHeaderCell scope="row">18</CTableHeaderCell>
+                    <CTableDataCell>26/09/22</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                  </CTableRow>
+                  <CTableRow>
+                    <CTableHeaderCell scope="row">19</CTableHeaderCell>
+                    <CTableDataCell>27/09/22</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                  </CTableRow>
+                  <CTableRow>
+                    <CTableHeaderCell scope="row">20</CTableHeaderCell>
+                    <CTableDataCell>28/09/22</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                  </CTableRow>
+                  <CTableRow>
+                    <CTableHeaderCell scope="row">21</CTableHeaderCell>
+                    <CTableDataCell>29/09/22</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                  </CTableRow>
+                </CTableBody>
+              </CTable>
+            </DocsExample>
+          </CCardBody>
+        </CCard>
+        <CCard className="mb-4">
+          <CCardHeader>
+            <strong>Août 2022 : Historiques des sauvegardes BDD + Clipper sur 2022</strong>
+          </CCardHeader>
+          <CCardBody>
+            <DocsExample href="components/table">
+              <CTable>
+                <CTableHead>
+                  <CTableRow>
+                    <CTableHeaderCell scope="col">#</CTableHeaderCell>
+                    <CTableHeaderCell scope="col">Date Backup</CTableHeaderCell>
+                    <CTableHeaderCell scope="col">Backup serveur</CTableHeaderCell>
+                    <CTableHeaderCell scope="col">Backup Clipper</CTableHeaderCell>
+                  </CTableRow>
+                </CTableHead>
+                <CTableBody>
+                  <CTableRow>
+                    <CTableHeaderCell scope="row">1</CTableHeaderCell>
+                    <CTableDataCell>01/08/22</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                  </CTableRow>
+                  <CTableRow>
+                    <CTableHeaderCell scope="row">2</CTableHeaderCell>
+                    <CTableDataCell>02/08/22</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                  </CTableRow>
+                  <CTableRow>
+                    <CTableHeaderCell scope="row">3</CTableHeaderCell>
+                    <CTableDataCell>03/08/22</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                  </CTableRow>
+                  <CTableRow>
+                    <CTableHeaderCell scope="row">4</CTableHeaderCell>
+                    <CTableDataCell>04/08/22</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                  </CTableRow>
+                  <CTableRow>
+                    <CTableHeaderCell scope="row">5</CTableHeaderCell>
+                    <CTableDataCell>05/08/22</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                  </CTableRow>
+                  <CTableRow>
+                    <CTableHeaderCell scope="row">6</CTableHeaderCell>
+                    <CTableDataCell>08/08/22</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                  </CTableRow>
+                  <CTableRow>
+                    <CTableHeaderCell scope="row">7</CTableHeaderCell>
+                    <CTableDataCell>09/08/22</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                  </CTableRow>
+                  <CTableRow>
+                    <CTableHeaderCell scope="row">8</CTableHeaderCell>
+                    <CTableDataCell>10/08/22</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                  </CTableRow>
+                  <CTableRow>
+                    <CTableHeaderCell scope="row">9</CTableHeaderCell>
+                    <CTableDataCell>11/08/22</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                  </CTableRow>
+                  <CTableRow>
+                    <CTableHeaderCell scope="row">10</CTableHeaderCell>
+                    <CTableDataCell>12/08/22</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                  </CTableRow>
+                  <CTableRow>
+                    <CTableHeaderCell scope="row">11</CTableHeaderCell>
+                    <CTableDataCell>15/08/22</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                  </CTableRow>
+                  <CTableRow>
+                    <CTableHeaderCell scope="row">12</CTableHeaderCell>
+                    <CTableDataCell>16/08/22</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                  </CTableRow>
+                  <CTableRow>
+                    <CTableHeaderCell scope="row">13</CTableHeaderCell>
+                    <CTableDataCell>17/08/22</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                  </CTableRow>
+                  <CTableRow>
+                    <CTableHeaderCell scope="row">14</CTableHeaderCell>
+                    <CTableDataCell>18/08/22</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                  </CTableRow>
+                  <CTableRow>
+                    <CTableHeaderCell scope="row">15</CTableHeaderCell>
+                    <CTableDataCell>19/08/22</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                  </CTableRow>
+                  <CTableRow>
+                    <CTableHeaderCell scope="row">16</CTableHeaderCell>
+                    <CTableDataCell>22/08/22</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                  </CTableRow>
+                  <CTableRow>
+                    <CTableHeaderCell scope="row">17</CTableHeaderCell>
+                    <CTableDataCell>23/08/22</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                  </CTableRow>
+                  <CTableRow>
+                    <CTableHeaderCell scope="row">18</CTableHeaderCell>
+                    <CTableDataCell>24/08/22</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                  </CTableRow>
+                  <CTableRow>
+                    <CTableHeaderCell scope="row">19</CTableHeaderCell>
+                    <CTableDataCell>25/08/22</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                  </CTableRow>
+                  <CTableRow>
+                    <CTableHeaderCell scope="row">20</CTableHeaderCell>
+                    <CTableDataCell>26/08/22</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                  </CTableRow>
+                  <CTableRow>
+                    <CTableHeaderCell scope="row">21</CTableHeaderCell>
+                    <CTableDataCell>29/08/22</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                  </CTableRow>
+                  <CTableRow>
+                    <CTableHeaderCell scope="row">22</CTableHeaderCell>
+                    <CTableDataCell>30/08/22</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                  </CTableRow>
+                  <CTableRow>
+                    <CTableHeaderCell scope="row">23</CTableHeaderCell>
+                    <CTableDataCell>31/08/22</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                  </CTableRow>
+                </CTableBody>
+              </CTable>
+            </DocsExample>
+          </CCardBody>
+        </CCard>
+        <CCard className="mb-4">
+          <CCardHeader>
+            <strong>Juillet 2022 : Historiques des sauvegardes BDD + Clipper sur 2022</strong>
+          </CCardHeader>
+          <CCardBody>
+            <DocsExample href="components/table">
+              <CTable>
+                <CTableHead>
+                  <CTableRow>
+                    <CTableHeaderCell scope="col">#</CTableHeaderCell>
+                    <CTableHeaderCell scope="col">Date Backup</CTableHeaderCell>
+                    <CTableHeaderCell scope="col">Backup serveur</CTableHeaderCell>
+                    <CTableHeaderCell scope="col">Backup Clipper</CTableHeaderCell>
+                  </CTableRow>
+                </CTableHead>
+                <CTableBody>
+                  <CTableRow>
+                    <CTableHeaderCell scope="row">1</CTableHeaderCell>
+                    <CTableDataCell>01/07/22</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                  </CTableRow>
+                  <CTableRow>
+                    <CTableHeaderCell scope="row">2</CTableHeaderCell>
+                    <CTableDataCell>04/07/22</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                  </CTableRow>
+                  <CTableRow>
+                    <CTableHeaderCell scope="row">3</CTableHeaderCell>
+                    <CTableDataCell>05/07/22</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                  </CTableRow>
+                  <CTableRow>
+                    <CTableHeaderCell scope="row">4</CTableHeaderCell>
+                    <CTableDataCell>06/07/22</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                  </CTableRow>
+                  <CTableRow>
+                    <CTableHeaderCell scope="row">5</CTableHeaderCell>
+                    <CTableDataCell>07/07/22</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                  </CTableRow>
+                  <CTableRow>
+                    <CTableHeaderCell scope="row">6</CTableHeaderCell>
+                    <CTableDataCell>08/07/22</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                  </CTableRow>
+                  <CTableRow>
+                    <CTableHeaderCell scope="row">7</CTableHeaderCell>
+                    <CTableDataCell>11/07/22</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                  </CTableRow>
+                  <CTableRow>
+                    <CTableHeaderCell scope="row">8</CTableHeaderCell>
+                    <CTableDataCell>12/07/22</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                  </CTableRow>
+                  <CTableRow>
+                    <CTableHeaderCell scope="row">9</CTableHeaderCell>
+                    <CTableDataCell>13/07/22</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                  </CTableRow>
+                  <CTableRow>
+                    <CTableHeaderCell scope="row">10</CTableHeaderCell>
+                    <CTableDataCell>14/07/22</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                  </CTableRow>
+                  <CTableRow>
+                    <CTableHeaderCell scope="row">11</CTableHeaderCell>
+                    <CTableDataCell>15/07/22</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                  </CTableRow>
+                  <CTableRow>
+                    <CTableHeaderCell scope="row">12</CTableHeaderCell>
+                    <CTableDataCell>18/07/22</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                  </CTableRow>
+                  <CTableRow>
+                    <CTableHeaderCell scope="row">13</CTableHeaderCell>
+                    <CTableDataCell>19/07/22</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                  </CTableRow>
+                  <CTableRow>
+                    <CTableHeaderCell scope="row">14</CTableHeaderCell>
+                    <CTableDataCell>20/07/22</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                  </CTableRow>
+                  <CTableRow>
+                    <CTableHeaderCell scope="row">15</CTableHeaderCell>
+                    <CTableDataCell>21/07/22</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                  </CTableRow>
+                  <CTableRow>
+                    <CTableHeaderCell scope="row">16</CTableHeaderCell>
+                    <CTableDataCell>22/07/22</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                  </CTableRow>
+                  <CTableRow>
+                    <CTableHeaderCell scope="row">17</CTableHeaderCell>
+                    <CTableDataCell>25/07/22</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                  </CTableRow>
+                  <CTableRow>
+                    <CTableHeaderCell scope="row">18</CTableHeaderCell>
+                    <CTableDataCell>26/07/22</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                  </CTableRow>
+                  <CTableRow>
+                    <CTableHeaderCell scope="row">19</CTableHeaderCell>
+                    <CTableDataCell>27/07/22</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                  </CTableRow>
+                  <CTableRow>
+                    <CTableHeaderCell scope="row">20</CTableHeaderCell>
+                    <CTableDataCell>28/07/22</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                  </CTableRow>
+                  <CTableRow>
+                    <CTableHeaderCell scope="row">21</CTableHeaderCell>
+                    <CTableDataCell>29/07/22</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                  </CTableRow>
+                </CTableBody>
+              </CTable>
+            </DocsExample>
+          </CCardBody>
+        </CCard>
+        <CCard className="mb-4">
+          <CCardHeader>
+            <strong>Juin 2022 : Historiques des sauvegardes BDD + Clipper sur 2022</strong>
+          </CCardHeader>
+          <CCardBody>
+            <DocsExample href="components/table">
+              <CTable>
+                <CTableHead>
+                  <CTableRow>
+                    <CTableHeaderCell scope="col">#</CTableHeaderCell>
+                    <CTableHeaderCell scope="col">Date Backup</CTableHeaderCell>
+                    <CTableHeaderCell scope="col">Backup serveur</CTableHeaderCell>
+                    <CTableHeaderCell scope="col">Backup Clipper</CTableHeaderCell>
+                  </CTableRow>
+                </CTableHead>
+                <CTableBody>
+                  <CTableRow>
+                    <CTableHeaderCell scope="row">1</CTableHeaderCell>
+                    <CTableDataCell>01/06/22</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                  </CTableRow>
+                  <CTableRow>
+                    <CTableHeaderCell scope="row">2</CTableHeaderCell>
+                    <CTableDataCell>02/06/22</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                  </CTableRow>
+                  <CTableRow>
+                    <CTableHeaderCell scope="row">3</CTableHeaderCell>
+                    <CTableDataCell>03/06/22</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                  </CTableRow>
+                  <CTableRow>
+                    <CTableHeaderCell scope="row">3</CTableHeaderCell>
+                    <CTableDataCell>06/06/22</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                  </CTableRow>
+                  <CTableRow>
+                    <CTableHeaderCell scope="row">4</CTableHeaderCell>
+                    <CTableDataCell>07/06/22</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                  </CTableRow>
+                  <CTableRow>
+                    <CTableHeaderCell scope="row">5</CTableHeaderCell>
+                    <CTableDataCell>07/06/22</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                  </CTableRow>
+                  <CTableRow>
+                    <CTableHeaderCell scope="row">6</CTableHeaderCell>
+                    <CTableDataCell>08/06/22</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                  </CTableRow>
+                  <CTableRow>
+                    <CTableHeaderCell scope="row">7</CTableHeaderCell>
+                    <CTableDataCell>09/06/22</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                  </CTableRow>
+                  <CTableRow>
+                    <CTableHeaderCell scope="row">8</CTableHeaderCell>
+                    <CTableDataCell>10/06/22</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                  </CTableRow>
+                  <CTableRow>
+                    <CTableHeaderCell scope="row">9</CTableHeaderCell>
+                    <CTableDataCell>13/06/22</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                  </CTableRow>
+                  <CTableRow>
+                    <CTableHeaderCell scope="row">10</CTableHeaderCell>
+                    <CTableDataCell>14/06/22</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                  </CTableRow>
+                  <CTableRow>
+                    <CTableHeaderCell scope="row">11</CTableHeaderCell>
+                    <CTableDataCell>15/06/22</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                  </CTableRow>
+                  <CTableRow>
+                    <CTableHeaderCell scope="row">12</CTableHeaderCell>
+                    <CTableDataCell>16/06/22</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                  </CTableRow>
+                  <CTableRow>
+                    <CTableHeaderCell scope="row">13</CTableHeaderCell>
+                    <CTableDataCell>17/06/22</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                  </CTableRow>
+                  <CTableRow>
+                    <CTableHeaderCell scope="row">14</CTableHeaderCell>
+                    <CTableDataCell>20/06/22</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                  </CTableRow>
+                  <CTableRow>
+                    <CTableHeaderCell scope="row">15</CTableHeaderCell>
+                    <CTableDataCell>21/06/22</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                  </CTableRow>
+                  <CTableRow>
+                    <CTableHeaderCell scope="row">16</CTableHeaderCell>
+                    <CTableDataCell>22/06/22</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                  </CTableRow>
+                  <CTableRow>
+                    <CTableHeaderCell scope="row">17</CTableHeaderCell>
+                    <CTableDataCell>23/06/22</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                  </CTableRow>
+                  <CTableRow>
+                    <CTableHeaderCell scope="row">18</CTableHeaderCell>
+                    <CTableDataCell>24/06/22</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                  </CTableRow>
+                  <CTableRow>
+                    <CTableHeaderCell scope="row">19</CTableHeaderCell>
+                    <CTableDataCell>27/06/22</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                  </CTableRow>
+                  <CTableRow>
+                    <CTableHeaderCell scope="row">20</CTableHeaderCell>
+                    <CTableDataCell>28/06/22</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                  </CTableRow>
+                  <CTableRow>
+                    <CTableHeaderCell scope="row">21</CTableHeaderCell>
+                    <CTableDataCell>29/06/22</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                  </CTableRow>
+                  <CTableRow>
+                    <CTableHeaderCell scope="row">22</CTableHeaderCell>
+                    <CTableDataCell>30/06/22</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                  </CTableRow>
+                </CTableBody>
+              </CTable>
+            </DocsExample>
+          </CCardBody>
+        </CCard>
+        <CCard className="mb-4">
+          <CCardHeader>
+            <strong>Mai 2022 : Historiques des sauvegardes BDD + Clipper sur 2022</strong>
+          </CCardHeader>
+          <CCardBody>
+            <DocsExample href="components/table">
+              <CTable>
+                <CTableHead>
+                  <CTableRow>
+                    <CTableHeaderCell scope="col">#</CTableHeaderCell>
+                    <CTableHeaderCell scope="col">Date Backup</CTableHeaderCell>
+                    <CTableHeaderCell scope="col">Backup serveur</CTableHeaderCell>
+                    <CTableHeaderCell scope="col">Backup Clipper</CTableHeaderCell>
+                  </CTableRow>
+                </CTableHead>
+                <CTableBody>
+                  <CTableRow>
+                    <CTableHeaderCell scope="row">1</CTableHeaderCell>
+                    <CTableDataCell>03/01/22</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                  </CTableRow>
+                  <CTableRow>
+                    <CTableHeaderCell scope="row">2</CTableHeaderCell>
+                    <CTableDataCell>02/05/22</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                  </CTableRow>
+                  <CTableRow>
+                    <CTableHeaderCell scope="row">3</CTableHeaderCell>
+                    <CTableDataCell>03/05/22</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                  </CTableRow>
+                  <CTableRow>
+                    <CTableHeaderCell scope="row">4</CTableHeaderCell>
+                    <CTableDataCell>04/05/22</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                  </CTableRow>
+                  <CTableRow>
+                    <CTableHeaderCell scope="row">5</CTableHeaderCell>
+                    <CTableDataCell>05/05/22</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                  </CTableRow>
+                  <CTableRow>
+                    <CTableHeaderCell scope="row">6</CTableHeaderCell>
+                    <CTableDataCell>06/05/22</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                  </CTableRow>
+                  <CTableRow>
+                    <CTableHeaderCell scope="row">7</CTableHeaderCell>
+                    <CTableDataCell>09/05/22</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                  </CTableRow>
+                  <CTableRow>
+                    <CTableHeaderCell scope="row">8</CTableHeaderCell>
+                    <CTableDataCell>10/05/22</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                  </CTableRow>
+                  <CTableRow>
+                    <CTableHeaderCell scope="row">9</CTableHeaderCell>
+                    <CTableDataCell>11/05/22</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                  </CTableRow>
+                  <CTableRow>
+                    <CTableHeaderCell scope="row">10</CTableHeaderCell>
+                    <CTableDataCell>12/05/22</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                  </CTableRow>
+                  <CTableRow>
+                    <CTableHeaderCell scope="row">11</CTableHeaderCell>
+                    <CTableDataCell>13/05/22</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                  </CTableRow>
+                  <CTableRow>
+                    <CTableHeaderCell scope="row">12</CTableHeaderCell>
+                    <CTableDataCell>16/05/22</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                  </CTableRow>
+                  <CTableRow>
+                    <CTableHeaderCell scope="row">13</CTableHeaderCell>
+                    <CTableDataCell>17/05/22</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                  </CTableRow>
+                  <CTableRow>
+                    <CTableHeaderCell scope="row">14</CTableHeaderCell>
+                    <CTableDataCell>18/05/22</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                  </CTableRow>
+                  <CTableRow>
+                    <CTableHeaderCell scope="row">15</CTableHeaderCell>
+                    <CTableDataCell>19/05/22</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                  </CTableRow>
+                  <CTableRow>
+                    <CTableHeaderCell scope="row">16</CTableHeaderCell>
+                    <CTableDataCell>20/05/22</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                  </CTableRow>
+                  <CTableRow>
+                    <CTableHeaderCell scope="row">17</CTableHeaderCell>
+                    <CTableDataCell>23/05/22</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                  </CTableRow>
+                  <CTableRow>
+                    <CTableHeaderCell scope="row">18</CTableHeaderCell>
+                    <CTableDataCell>24/05/22</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                  </CTableRow>
+                  <CTableRow>
+                    <CTableHeaderCell scope="row">19</CTableHeaderCell>
+                    <CTableDataCell>25/05/22</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                  </CTableRow>
+                  <CTableRow>
+                    <CTableHeaderCell scope="row">20</CTableHeaderCell>
+                    <CTableDataCell>26/05/22</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                  </CTableRow>
+                  <CTableRow>
+                    <CTableHeaderCell scope="row">21</CTableHeaderCell>
+                    <CTableDataCell>27/05/22</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                  </CTableRow>
+                  <CTableRow>
+                    <CTableHeaderCell scope="row">22</CTableHeaderCell>
+                    <CTableDataCell>30/05/22</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                  </CTableRow>
+                  <CTableRow>
+                    <CTableHeaderCell scope="row">23</CTableHeaderCell>
+                    <CTableDataCell>31/05/22</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                  </CTableRow>
+                </CTableBody>
+              </CTable>
+            </DocsExample>
+          </CCardBody>
+        </CCard>
+        <CCard className="mb-4">
+          <CCardHeader>
+            <strong>Avril 2022 : Historiques des sauvegardes BDD + Clipper sur 2022</strong>
+          </CCardHeader>
+          <CCardBody>
+            <DocsExample href="components/table">
+              <CTable>
+                <CTableHead>
+                  <CTableRow>
+                    <CTableHeaderCell scope="col">#</CTableHeaderCell>
+                    <CTableHeaderCell scope="col">Date Backup</CTableHeaderCell>
+                    <CTableHeaderCell scope="col">Backup serveur</CTableHeaderCell>
+                    <CTableHeaderCell scope="col">Backup Clipper</CTableHeaderCell>
+                  </CTableRow>
+                </CTableHead>
+                <CTableBody>
+                  <CTableRow>
+                    <CTableHeaderCell scope="row">1</CTableHeaderCell>
+                    <CTableDataCell>01/04/22</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                  </CTableRow>
+                  <CTableRow>
+                    <CTableHeaderCell scope="row">2</CTableHeaderCell>
+                    <CTableDataCell>04/04/22</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                  </CTableRow>
+                  <CTableRow>
+                    <CTableHeaderCell scope="row">3</CTableHeaderCell>
+                    <CTableDataCell>05/04/22</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                  </CTableRow>
+                  <CTableRow>
+                    <CTableHeaderCell scope="row">4</CTableHeaderCell>
+                    <CTableDataCell>06/04/22</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                  </CTableRow>
+                  <CTableRow>
+                    <CTableHeaderCell scope="row">5</CTableHeaderCell>
+                    <CTableDataCell>07/04/22</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                  </CTableRow>
+                  <CTableRow>
+                    <CTableHeaderCell scope="row">6</CTableHeaderCell>
+                    <CTableDataCell>11/04/22</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                  </CTableRow>
+                  <CTableRow>
+                    <CTableHeaderCell scope="row">7</CTableHeaderCell>
+                    <CTableDataCell>12/04/22</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                  </CTableRow>
+                  <CTableRow>
+                    <CTableHeaderCell scope="row">8</CTableHeaderCell>
+                    <CTableDataCell>13/04/22</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                  </CTableRow>
+                  <CTableRow>
+                    <CTableHeaderCell scope="row">9</CTableHeaderCell>
+                    <CTableDataCell>14/04/22</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                  </CTableRow>
+                  <CTableRow>
+                    <CTableHeaderCell scope="row">10</CTableHeaderCell>
+                    <CTableDataCell>15/04/22</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                  </CTableRow>
+                  <CTableRow>
+                    <CTableHeaderCell scope="row">11</CTableHeaderCell>
+                    <CTableDataCell>18/04/22</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                  </CTableRow>
+                  <CTableRow>
+                    <CTableHeaderCell scope="row">12</CTableHeaderCell>
+                    <CTableDataCell>19/04/22</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                  </CTableRow>
+                  <CTableRow>
+                    <CTableHeaderCell scope="row">13</CTableHeaderCell>
+                    <CTableDataCell>20/04/22</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                  </CTableRow>
+                  <CTableRow>
+                    <CTableHeaderCell scope="row">14</CTableHeaderCell>
+                    <CTableDataCell>21/04/22</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                  </CTableRow>
+                  <CTableRow>
+                    <CTableHeaderCell scope="row">15</CTableHeaderCell>
+                    <CTableDataCell>22/04/22</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                  </CTableRow>
+                </CTableBody>
+              </CTable>
+            </DocsExample>
+          </CCardBody>
+        </CCard>
+        <CCard className="mb-4">
+          <CCardHeader>
+            <strong>Mars 2022 : Historiques des sauvegardes BDD + Clipper sur 2022</strong>
+          </CCardHeader>
+          <CCardBody>
+            <DocsExample href="components/table">
+              <CTable>
+                <CTableHead>
+                  <CTableRow>
+                    <CTableHeaderCell scope="col">#</CTableHeaderCell>
+                    <CTableHeaderCell scope="col">Date Backup</CTableHeaderCell>
+                    <CTableHeaderCell scope="col">Backup serveur</CTableHeaderCell>
+                    <CTableHeaderCell scope="col">Backup Clipper</CTableHeaderCell>
+                  </CTableRow>
+                </CTableHead>
+                <CTableBody>
+                  <CTableRow>
+                    <CTableHeaderCell scope="row">1</CTableHeaderCell>
+                    <CTableDataCell>01/03/22</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                  </CTableRow>
+                  <CTableRow>
+                    <CTableHeaderCell scope="row">2</CTableHeaderCell>
+                    <CTableDataCell>02/03/22</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                  </CTableRow>
+                  <CTableRow>
+                    <CTableHeaderCell scope="row">3</CTableHeaderCell>
+                    <CTableDataCell>03/03/22</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                  </CTableRow>
+                  <CTableRow>
+                    <CTableHeaderCell scope="row">4</CTableHeaderCell>
+                    <CTableDataCell>04/03/22</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                  </CTableRow>
+                  <CTableRow>
+                    <CTableHeaderCell scope="row">5</CTableHeaderCell>
+                    <CTableDataCell>07/03/22</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                  </CTableRow>
+                  <CTableRow>
+                    <CTableHeaderCell scope="row">6</CTableHeaderCell>
+                    <CTableDataCell>08/03/22</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                  </CTableRow>
+                  <CTableRow>
+                    <CTableHeaderCell scope="row">7</CTableHeaderCell>
+                    <CTableDataCell>09/03/22</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                  </CTableRow>
+                  <CTableRow>
+                    <CTableHeaderCell scope="row">8</CTableHeaderCell>
+                    <CTableDataCell>10/03/22</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                  </CTableRow>
+                  <CTableRow>
+                    <CTableHeaderCell scope="row">9</CTableHeaderCell>
+                    <CTableDataCell>11/03/22</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                  </CTableRow>
+                  <CTableRow>
+                    <CTableHeaderCell scope="row">10</CTableHeaderCell>
+                    <CTableDataCell>14/03/22</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                  </CTableRow>
+                  <CTableRow>
+                    <CTableHeaderCell scope="row">11</CTableHeaderCell>
+                    <CTableDataCell>15/03/22</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                  </CTableRow>
+                  <CTableRow>
+                    <CTableHeaderCell scope="row">12</CTableHeaderCell>
+                    <CTableDataCell>16/03/22</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                  </CTableRow>
+                  <CTableRow>
+                    <CTableHeaderCell scope="row">13</CTableHeaderCell>
+                    <CTableDataCell>17/03/22</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                  </CTableRow>
+                  <CTableRow>
+                    <CTableHeaderCell scope="row">14</CTableHeaderCell>
+                    <CTableDataCell>18/03/22</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                  </CTableRow>
+                  <CTableRow>
+                    <CTableHeaderCell scope="row">15</CTableHeaderCell>
+                    <CTableDataCell>21/03/22</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                  </CTableRow>
+                  <CTableRow>
+                    <CTableHeaderCell scope="row">16</CTableHeaderCell>
+                    <CTableDataCell>22/03/22</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                  </CTableRow>
+                  <CTableRow>
+                    <CTableHeaderCell scope="row">17</CTableHeaderCell>
+                    <CTableDataCell>23/03/22</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                  </CTableRow>
+                  <CTableRow>
+                    <CTableHeaderCell scope="row">18</CTableHeaderCell>
+                    <CTableDataCell>24/03/22</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                  </CTableRow>
+                  <CTableRow>
+                    <CTableHeaderCell scope="row">19</CTableHeaderCell>
+                    <CTableDataCell>25/03/22</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                  </CTableRow>
+                  <CTableRow>
+                    <CTableHeaderCell scope="row">20</CTableHeaderCell>
+                    <CTableDataCell>28/03/22</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                  </CTableRow>
+                </CTableBody>
+              </CTable>
+            </DocsExample>
+          </CCardBody>
+        </CCard>
+        <CCard className="mb-4">
+          <CCardHeader>
+            <strong>Février 2022 : Historiques des sauvegardes BDD + Clipper sur 2022</strong>
+          </CCardHeader>
+          <CCardBody>
+            <DocsExample href="components/table">
+              <CTable>
+                <CTableHead>
+                  <CTableRow>
+                    <CTableHeaderCell scope="col">#</CTableHeaderCell>
+                    <CTableHeaderCell scope="col">Date Backup</CTableHeaderCell>
+                    <CTableHeaderCell scope="col">Backup serveur</CTableHeaderCell>
+                    <CTableHeaderCell scope="col">Backup Clipper</CTableHeaderCell>
+                  </CTableRow>
+                </CTableHead>
+                <CTableBody>
+                  <CTableRow>
+                    <CTableHeaderCell scope="row">1</CTableHeaderCell>
+                    <CTableDataCell>01/02/22</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                  </CTableRow>
+                  <CTableRow>
+                    <CTableHeaderCell scope="row">2</CTableHeaderCell>
+                    <CTableDataCell>02/02/22</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                  </CTableRow>
+                  <CTableRow>
+                    <CTableHeaderCell scope="row">3</CTableHeaderCell>
+                    <CTableDataCell>03/02/22</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                  </CTableRow>
+                  <CTableRow>
+                    <CTableHeaderCell scope="row">4</CTableHeaderCell>
+                    <CTableDataCell>04/0/22</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                  </CTableRow>
+                  <CTableRow>
+                    <CTableHeaderCell scope="row">5</CTableHeaderCell>
+                    <CTableDataCell>07/02/22</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                  </CTableRow>
+                  <CTableRow>
+                    <CTableHeaderCell scope="row">6</CTableHeaderCell>
+                    <CTableDataCell>08/02/22</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                  </CTableRow>
+                  <CTableRow>
+                    <CTableHeaderCell scope="row">7</CTableHeaderCell>
+                    <CTableDataCell>09/02/22</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                  </CTableRow>
+                  <CTableRow>
+                    <CTableHeaderCell scope="row">8</CTableHeaderCell>
+                    <CTableDataCell>10/02/22</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                  </CTableRow>
+                  <CTableRow>
+                    <CTableHeaderCell scope="row">9</CTableHeaderCell>
+                    <CTableDataCell>11/02/22</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                  </CTableRow>
+                  <CTableRow>
+                    <CTableHeaderCell scope="row">10</CTableHeaderCell>
+                    <CTableDataCell>14/02/22</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                  </CTableRow>
+                  <CTableRow>
+                    <CTableHeaderCell scope="row">11</CTableHeaderCell>
+                    <CTableDataCell>15/02/22</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                  </CTableRow>
+                  <CTableRow>
+                    <CTableHeaderCell scope="row">12</CTableHeaderCell>
+                    <CTableDataCell>16/02/22</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                  </CTableRow>
+                  <CTableRow>
+                    <CTableHeaderCell scope="row">13</CTableHeaderCell>
+                    <CTableDataCell>17/02/22</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                  </CTableRow>
+                  <CTableRow>
+                    <CTableHeaderCell scope="row">14</CTableHeaderCell>
+                    <CTableDataCell>18/02/22</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                  </CTableRow>
+                  <CTableRow>
+                    <CTableHeaderCell scope="row">15</CTableHeaderCell>
+                    <CTableDataCell>21/02/22</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                  </CTableRow>
+                  <CTableRow>
+                    <CTableHeaderCell scope="row">16</CTableHeaderCell>
+                    <CTableDataCell>22/02/22</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                  </CTableRow>
+                  <CTableRow>
+                    <CTableHeaderCell scope="row">17</CTableHeaderCell>
+                    <CTableDataCell>23/02/22</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                  </CTableRow>
+                  <CTableRow>
+                    <CTableHeaderCell scope="row">18</CTableHeaderCell>
+                    <CTableDataCell>24/02/22</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                  </CTableRow>
+                  <CTableRow>
+                    <CTableHeaderCell scope="row">19</CTableHeaderCell>
+                    <CTableDataCell>25/02/22</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                  </CTableRow>
+                  <CTableRow>
+                    <CTableHeaderCell scope="row">20</CTableHeaderCell>
+                    <CTableDataCell>28/02/22</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                  </CTableRow>
+                </CTableBody>
+              </CTable>
+            </DocsExample>
+          </CCardBody>
+        </CCard>
+        <CCard className="mb-4">
+          <CCardHeader>
+            <strong>Janvier 2022 : Historiques des sauvegardes BDD + Clipper</strong>
+          </CCardHeader>
+          <CCardBody>
+            <DocsExample href="components/table">
+              <CTable>
+                <CTableHead>
+                  <CTableRow>
+                    <CTableHeaderCell scope="col">#</CTableHeaderCell>
+                    <CTableHeaderCell scope="col">Date Backup</CTableHeaderCell>
+                    <CTableHeaderCell scope="col">Backup serveur</CTableHeaderCell>
+                    <CTableHeaderCell scope="col">Backup Clipper</CTableHeaderCell>
+                  </CTableRow>
+                </CTableHead>
+                <CTableBody>
+                  <CTableRow>
+                    <CTableHeaderCell scope="row">1</CTableHeaderCell>
+                    <CTableDataCell>03/01/22</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                  </CTableRow>
+                  <CTableRow>
+                    <CTableHeaderCell scope="row">2</CTableHeaderCell>
+                    <CTableDataCell>04/01/22</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                  </CTableRow>
+                  <CTableRow>
+                    <CTableHeaderCell scope="row">3</CTableHeaderCell>
+                    <CTableDataCell>05/01/22</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                  </CTableRow>
+                  <CTableRow>
+                    <CTableHeaderCell scope="row">4</CTableHeaderCell>
+                    <CTableDataCell>06/01/22</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                  </CTableRow>
+                  <CTableRow>
+                    <CTableHeaderCell scope="row">5</CTableHeaderCell>
+                    <CTableDataCell>07/01/22</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                  </CTableRow>
+                  <CTableRow>
+                    <CTableHeaderCell scope="row">6</CTableHeaderCell>
+                    <CTableDataCell>10/01/22</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                  </CTableRow>
+                  <CTableRow>
+                    <CTableHeaderCell scope="row">7</CTableHeaderCell>
+                    <CTableDataCell>11/01/22</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                  </CTableRow>
+                  <CTableRow>
+                    <CTableHeaderCell scope="row">8</CTableHeaderCell>
+                    <CTableDataCell>12/01/22</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                  </CTableRow>
+                  <CTableRow>
+                    <CTableHeaderCell scope="row">9</CTableHeaderCell>
+                    <CTableDataCell>13/01/22</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                  </CTableRow>
+                  <CTableRow>
+                    <CTableHeaderCell scope="row">10</CTableHeaderCell>
+                    <CTableDataCell>14/01/22</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                  </CTableRow>
+                  <CTableRow>
+                    <CTableHeaderCell scope="row">11</CTableHeaderCell>
+                    <CTableDataCell>17/01/22</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                  </CTableRow>
+                  <CTableRow>
+                    <CTableHeaderCell scope="row">12</CTableHeaderCell>
+                    <CTableDataCell>18/01/22</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                  </CTableRow>
+                  <CTableRow>
+                    <CTableHeaderCell scope="row">13</CTableHeaderCell>
+                    <CTableDataCell>19/01/22</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                  </CTableRow>
+                  <CTableRow>
+                    <CTableHeaderCell scope="row">14</CTableHeaderCell>
+                    <CTableDataCell>20/01/22</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                  </CTableRow>
+                  <CTableRow>
+                    <CTableHeaderCell scope="row">15</CTableHeaderCell>
+                    <CTableDataCell>21/01/22</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                  </CTableRow>
+                  <CTableRow>
+                    <CTableHeaderCell scope="row">16</CTableHeaderCell>
+                    <CTableDataCell>24/01/22</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                  </CTableRow>
+                  <CTableRow>
+                    <CTableHeaderCell scope="row">17</CTableHeaderCell>
+                    <CTableDataCell>25/01/22</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                  </CTableRow>
+                  <CTableRow>
+                    <CTableHeaderCell scope="row">18</CTableHeaderCell>
+                    <CTableDataCell>26/01/22</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                  </CTableRow>
+                  <CTableRow>
+                    <CTableHeaderCell scope="row">19</CTableHeaderCell>
+                    <CTableDataCell>27/01/22</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                  </CTableRow>
+                  <CTableRow>
+                    <CTableHeaderCell scope="row">20</CTableHeaderCell>
+                    <CTableDataCell>28/01/22</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                  </CTableRow>
+                  <CTableRow>
+                    <CTableHeaderCell scope="row">21</CTableHeaderCell>
+                    <CTableDataCell>31/01/22</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                    <CTableDataCell>1</CTableDataCell>
+                  </CTableRow>
+                </CTableBody>
+              </CTable>
+            </DocsExample>
+          </CCardBody>
+        </CCard>
+      </CCol>
+    </CRow>
   )
 }
 

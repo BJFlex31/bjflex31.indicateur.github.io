@@ -1,24 +1,84 @@
 import React from 'react'
-import { CCard, CCardBody, CCardHeader, CRow } from '@coreui/react'
-import { getIconsView } from '../brands/Brands.js'
-import { flagSet } from '@coreui/icons'
+import { CCard, CCardBody, CCol, CCardHeader, CRow } from '@coreui/react'
+import {
+  CChartBar,
+  CChartDoughnut,
+  CChartLine,
+  CChartPie,
+  CChartPolarArea,
+} from '@coreui/react-chartjs'
 import { DocsCallout } from 'src/components'
 
 const CoreUIIcons = () => {
   return (
-    <>
-      <DocsCallout
-        name="CoreUI Flag Icons"
-        href="components/chart"
-        content="CoreUI Flag Icons. CoreUI Icons package is delivered with more than 1500 icons in multiple formats SVG, PNG, and Webfonts. CoreUI Icons are beautifully crafted symbols for common actions and items. You can use them in your digital products for web or mobile app."
-      />
-      <CCard className="mb-4">
-        <CCardHeader>Flag Icons</CCardHeader>
-        <CCardBody>
-          <CRow className="text-center">{getIconsView(flagSet)}</CRow>
-        </CCardBody>
-      </CCard>
-    </>
+    <CRow>
+      <CCol xs={13}>
+        <CCard className="mb-4">
+          <CCardHeader>Etat sauvegarde serveur</CCardHeader>
+          <CCardBody>
+            <CChartBar
+              data={{
+                labels: [
+                  'Janvier',
+                  'Février',
+                  'Mars',
+                  'Avril',
+                  'Mai',
+                  'Juin',
+                  'Juillet',
+                  'Août',
+                  'Septembre',
+                  'Octobre',
+                  'Novembre',
+                  'Décembre',
+                ],
+                datasets: [
+                  {
+                    label: '1 : sauvegarde fonctionnel / 0 : sauvegarde corrompue',
+                    backgroundColor: '#36a9e1',
+                    data: [1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 0],
+                  },
+                ],
+              }}
+              labels="months"
+            />
+          </CCardBody>
+        </CCard>
+      </CCol>
+      <CCol xs={13}>
+        <CCard className="mb-4">
+          <CCardHeader>Etat sauvegarde clipper</CCardHeader>
+          <CCardBody>
+            <CChartBar
+              data={{
+                labels: [
+                  'Janvier',
+                  'Février',
+                  'Mars',
+                  'Avril',
+                  'Mai',
+                  'Juin',
+                  'Juillet',
+                  'Août',
+                  'Septembre',
+                  'Octobre',
+                  'Novembre',
+                  'Décembre',
+                ],
+                datasets: [
+                  {
+                    label: '1 : sauvegarde fonctionnel / 0 : sauvegarde corrompue',
+                    backgroundColor: '#153767',
+                    data: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0],
+                  },
+                ],
+              }}
+              labels="months"
+            />
+          </CCardBody>
+        </CCard>
+      </CCol>
+    </CRow>
   )
 }
 
