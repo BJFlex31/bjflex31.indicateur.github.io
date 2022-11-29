@@ -17,13 +17,6 @@
 
 Dashboard BJFLEX Informatique, regroupant les indicateurs informatiques (tickets/sauvegardes/haute-dispo).
 
-## Table of Contents
-
-* [Versions](#indicateur-tickets)
-* [CoreUI Pro](#indicateur-sauvegarde)
-* [CoreUI Pro](#indicateur-pro)
-* [Quick Start](#quick-start)
-
 ## Indicateur Tickets
 
 Le but de cette indicateur est de pouvoir suivre les incidents, les problèmes récurrents etc...
