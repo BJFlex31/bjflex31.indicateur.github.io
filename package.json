@@ -2,25 +2,23 @@
   "name": "@coreui/coreui-free-react-admin-template",
   "version": "4.4.0",
   "description": "CoreUI Free React Admin Template",
-  "homepage": ".",
+  "homepage": "http://BJFlex31/bjflex31.indicateur.github.io",
   "bugs": {
     "url": "https://github.com/coreui/coreui-free-react-admin-template/issues"
   },
   "repository": {
     "type": "git",
-    "url": "git@github.com:coreui/coreui-free-react-admin-template.git"
+    "url": "git@github.com:BJFlex31/bjflex31.indicateur.github.io.git"
   },
-  "license": "MIT",
-  "author": "The CoreUI Team (https://github.com/orgs/coreui/people)",
   "scripts": {
+    "start": "react-scripts start",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "build": "react-scripts build",
+    "test": "react-scripts test",
     "changelog": "auto-changelog --starting-version 4.4.0 --commit-limit false --hide-credit",
     "eject": "react-scripts eject",
-    "lint": "eslint \"src/**/*.js\"",
-    "start": "react-scripts start",
-    "test": "react-scripts test",
-    "test:cov": "npm test -- --coverage --watchAll=false",
-    "test:debug": "react-scripts --inspect-brk test --runInBand"
+    "lint": "eslint \"src/**/*.js\""
   },
   "dependencies": {
     "@coreui/chartjs": "^3.0.0",
@@ -49,6 +47,7 @@
     "auto-changelog": "~2.4.0",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-prettier": "^4.2.1",
+    "gh-pages": "^4.0.0",
     "prettier": "2.7.1",
     "react-scripts": "^5.0.1",
     "sass": "^1.54.4",
