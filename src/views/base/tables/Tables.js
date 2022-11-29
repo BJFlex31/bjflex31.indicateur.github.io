@@ -7,17 +7,18 @@ import {
   CRow,
   CTable,
   CTableBody,
-  CTableCaption,
   CTableDataCell,
   CTableHead,
   CTableHeaderCell,
   CTableRow,
+  CAlert,
 } from '@coreui/react'
 import { DocsExample } from 'src/components'
 
 const Tables = () => {
   return (
     <CRow>
+      <CAlert color="danger">3 incidents qui ne seront pas résolus avant le changement ERP</CAlert>
       <CCol xs={12}>
         <CCard className="mb-4">
           <CCardHeader>
@@ -103,15 +104,6 @@ const Tables = () => {
                   </CTableRow>
                   <CTableRow>
                     <CTableHeaderCell scope="row">8</CTableHeaderCell>
-                    <CTableDataCell>12/21</CTableDataCell>
-                    <CTableDataCell>Thibaud</CTableDataCell>
-                    <CTableDataCell>Bloquant</CTableDataCell>
-                    <CTableDataCell>Logiciel</CTableDataCell>
-                    <CTableDataCell>Clipper : pb RECH_BC_AFF</CTableDataCell>
-                    <CTableDataCell>Non Résolu</CTableDataCell>
-                  </CTableRow>
-                  <CTableRow>
-                    <CTableHeaderCell scope="row">9</CTableHeaderCell>
                     <CTableDataCell>11/21</CTableDataCell>
                     <CTableDataCell>Estelle P</CTableDataCell>
                     <CTableDataCell>Bloquant</CTableDataCell>
@@ -120,7 +112,7 @@ const Tables = () => {
                     <CTableDataCell>Résolu</CTableDataCell>
                   </CTableRow>
                   <CTableRow>
-                    <CTableHeaderCell scope="row">10</CTableHeaderCell>
+                    <CTableHeaderCell scope="row">9</CTableHeaderCell>
                     <CTableDataCell>11/21</CTableDataCell>
                     <CTableDataCell>Marie HF</CTableDataCell>
                     <CTableDataCell>Bloquant</CTableDataCell>
@@ -129,7 +121,7 @@ const Tables = () => {
                     <CTableDataCell>Résolu</CTableDataCell>
                   </CTableRow>
                   <CTableRow>
-                    <CTableHeaderCell scope="row">11</CTableHeaderCell>
+                    <CTableHeaderCell scope="row">10</CTableHeaderCell>
                     <CTableDataCell>09/21</CTableDataCell>
                     <CTableDataCell>Eric M</CTableDataCell>
                     <CTableDataCell>Bas</CTableDataCell>
@@ -138,7 +130,7 @@ const Tables = () => {
                     <CTableDataCell>Résolu</CTableDataCell>
                   </CTableRow>
                   <CTableRow>
-                    <CTableHeaderCell scope="row">12</CTableHeaderCell>
+                    <CTableHeaderCell scope="row">11</CTableHeaderCell>
                     <CTableDataCell>09/21</CTableDataCell>
                     <CTableDataCell>Stéphane N</CTableDataCell>
                     <CTableDataCell>Bloquant</CTableDataCell>
@@ -147,7 +139,7 @@ const Tables = () => {
                     <CTableDataCell>Résolu</CTableDataCell>
                   </CTableRow>
                   <CTableRow>
-                    <CTableHeaderCell scope="row">13</CTableHeaderCell>
+                    <CTableHeaderCell scope="row">12</CTableHeaderCell>
                     <CTableDataCell>09/21</CTableDataCell>
                     <CTableDataCell>Majid</CTableDataCell>
                     <CTableDataCell>Bloquant</CTableDataCell>
@@ -156,7 +148,7 @@ const Tables = () => {
                     <CTableDataCell>Non Résolu</CTableDataCell>
                   </CTableRow>
                   <CTableRow>
-                    <CTableHeaderCell scope="row">14</CTableHeaderCell>
+                    <CTableHeaderCell scope="row">13</CTableHeaderCell>
                     <CTableDataCell>08/21</CTableDataCell>
                     <CTableDataCell>Daniel</CTableDataCell>
                     <CTableDataCell>Bloquant</CTableDataCell>
@@ -165,7 +157,7 @@ const Tables = () => {
                     <CTableDataCell>Résolu</CTableDataCell>
                   </CTableRow>
                   <CTableRow>
-                    <CTableHeaderCell scope="row">15</CTableHeaderCell>
+                    <CTableHeaderCell scope="row">14</CTableHeaderCell>
                     <CTableDataCell>08/21</CTableDataCell>
                     <CTableDataCell>Jean</CTableDataCell>
                     <CTableDataCell>Bloquant</CTableDataCell>
@@ -174,7 +166,7 @@ const Tables = () => {
                     <CTableDataCell>Non Résolu</CTableDataCell>
                   </CTableRow>
                   <CTableRow>
-                    <CTableHeaderCell scope="row">16</CTableHeaderCell>
+                    <CTableHeaderCell scope="row">15</CTableHeaderCell>
                     <CTableDataCell>08/21</CTableDataCell>
                     <CTableDataCell>Kader B</CTableDataCell>
                     <CTableDataCell>Moyen</CTableDataCell>

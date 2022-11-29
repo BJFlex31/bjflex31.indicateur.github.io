@@ -1,5 +1,5 @@
 import React from 'react'
-import { CCard, CCardBody, CCol, CCardHeader, CRow } from '@coreui/react'
+import { CCard, CCardBody, CCol, CCardHeader, CRow, CAlert } from '@coreui/react'
 import {
   CChartBar,
   CChartDoughnut,
@@ -48,6 +48,7 @@ const Charts = () => {
           </CCardBody>
         </CCard>
       </CCol>
+      <CAlert color="danger">3 incidents qui ne seront pas résolus avant le changement ERP</CAlert>
       <CCol xs={6}>
         <CCard className="mb-4">
           <CCardHeader>Nombre incident par type</CCardHeader>
@@ -57,8 +58,26 @@ const Charts = () => {
                 labels: ['Matériel', 'Logiciel'],
                 datasets: [
                   {
-                    backgroundColor: ['#457825', '#36a9e1'],
+                    backgroundColor: ['#153767', '#36a9e1'],
                     data: [3, 14],
+                  },
+                ],
+              }}
+            />
+          </CCardBody>
+        </CCard>
+      </CCol>
+      <CCol xs={6}>
+        <CCard className="mb-4">
+          <CCardHeader>Nombre incident résolus et non résolus</CCardHeader>
+          <CCardBody>
+            <CChartDoughnut
+              data={{
+                labels: ['Résolus', 'Non résolus'],
+                datasets: [
+                  {
+                    backgroundColor: ['#36a9e1', '#153767'],
+                    data: [13, 3],
                   },
                 ],
               }}

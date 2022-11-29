@@ -32,24 +32,6 @@ const Badges = () => {
           </CCardBody>
         </CCard>
       </CCol>
-      <CCol xs={6}>
-        <CCard className="mb-4">
-          <CCardHeader>Nombre incident par type</CCardHeader>
-          <CCardBody>
-            <CChartDoughnut
-              data={{
-                labels: ['Matériel', 'Logiciel'],
-                datasets: [
-                  {
-                    backgroundColor: ['#153767', '#36a9e1'],
-                    data: [3, 14],
-                  },
-                ],
-              }}
-            />
-          </CCardBody>
-        </CCard>
-      </CCol>
     </CRow>
   )
 }
