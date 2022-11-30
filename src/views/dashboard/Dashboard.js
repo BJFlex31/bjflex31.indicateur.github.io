@@ -352,6 +352,24 @@ const Dashboard = () => {
           />
         </CCol>
       </CRow>
+      <h3>
+        Listes des tâches
+        <small> en cours:</small>
+      </h3>
+      <CRow>
+        <CCol xs={6}>
+          <CWidgetStatsC
+            className="mb-3"
+            icon={<CIcon icon={cilChartPie} height={36} />}
+            color="primary"
+            inverse
+            progress={{ value: 91.6 }}
+            text="Widget helper text"
+            title="décembre en attente de remplissage"
+            value="93,6%"
+          />
+        </CCol>
+      </CRow>
     </>
   )
 }
