@@ -4,12 +4,9 @@ import {
   CRow,
   CCol,
   CWidgetStatsA,
-  CWidgetStatsB,
   CWidgetStatsC,
   CDropdown,
-  CDropdownMenu,
   CDropdownToggle,
-  CDropdownItem,
 } from '@coreui/react'
 import { CChartBar, CChartLine } from '@coreui/react-chartjs'
 import { cilArrowTop, cilOptions, cilChartPie } from '@coreui/icons'
