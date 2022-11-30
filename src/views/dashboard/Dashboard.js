@@ -351,7 +351,7 @@ const Dashboard = () => {
             progress={{ value: 91.6 }}
             text="Widget helper text"
             title="décembre en attente de remplissage"
-            value="83,3%"
+            value="93,6%"
           />
         </CCol>
       </CRow>
