@@ -9,6 +9,7 @@ import {
   CDropdownMenu,
   CDropdownToggle,
 } from '@coreui/react'
+import { NavLink } from 'react-router-dom'
 import {
   cilBell,
   cilCreditCard,
@@ -84,9 +85,9 @@ const AppHeaderDropdown = () => {
           </CBadge>
         </CDropdownItem>
         <CDropdownDivider />
-        <CDropdownItem href="#">
+        <CDropdownItem to="/pages/login" component={NavLink}>
           <CIcon icon={cilLockLocked} className="me-2" />
-          Lock Account
+          Login
         </CDropdownItem>
       </CDropdownMenu>
     </CDropdown>
