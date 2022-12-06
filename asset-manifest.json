@@ -1,10 +1,10 @@
 {
   "files": {
     "main.css": "/bjflex31.indicateur.github.io/static/css/main.bc6d9625.css",
-    "main.js": "/bjflex31.indicateur.github.io/static/js/main.5ec1deab.js",
+    "main.js": "/bjflex31.indicateur.github.io/static/js/main.6eb4b6ae.js",
     "static/css/41.dd2c9722.chunk.css": "/bjflex31.indicateur.github.io/static/css/41.dd2c9722.chunk.css",
-    "static/js/41.968df82f.chunk.js": "/bjflex31.indicateur.github.io/static/js/41.968df82f.chunk.js",
-    "static/js/24.1e58e2e1.chunk.js": "/bjflex31.indicateur.github.io/static/js/24.1e58e2e1.chunk.js",
+    "static/js/41.12670f1b.chunk.js": "/bjflex31.indicateur.github.io/static/js/41.12670f1b.chunk.js",
+    "static/js/24.8de1dc50.chunk.js": "/bjflex31.indicateur.github.io/static/js/24.8de1dc50.chunk.js",
     "static/js/9.d6469af2.chunk.js": "/bjflex31.indicateur.github.io/static/js/9.d6469af2.chunk.js",
     "static/js/1.06991b04.chunk.js": "/bjflex31.indicateur.github.io/static/js/1.06991b04.chunk.js",
     "static/js/188.46a9c346.chunk.js": "/bjflex31.indicateur.github.io/static/js/188.46a9c346.chunk.js",
@@ -49,7 +49,7 @@
     "static/js/638.fb2402d3.chunk.js": "/bjflex31.indicateur.github.io/static/js/638.fb2402d3.chunk.js",
     "static/js/177.01bd8749.chunk.js": "/bjflex31.indicateur.github.io/static/js/177.01bd8749.chunk.js",
     "static/js/13.e53086fd.chunk.js": "/bjflex31.indicateur.github.io/static/js/13.e53086fd.chunk.js",
-    "static/js/995.53bb66b4.chunk.js": "/bjflex31.indicateur.github.io/static/js/995.53bb66b4.chunk.js",
+    "static/js/809.42d11f0b.chunk.js": "/bjflex31.indicateur.github.io/static/js/809.42d11f0b.chunk.js",
     "static/js/442.5b303db1.chunk.js": "/bjflex31.indicateur.github.io/static/js/442.5b303db1.chunk.js",
     "static/media/react.jpg": "/bjflex31.indicateur.github.io/static/media/react.83088efde08a5dedde9f.jpg",
     "static/media/vue.jpg": "/bjflex31.indicateur.github.io/static/media/vue.8a74d93fde1a02c24730.jpg",
@@ -57,10 +57,10 @@
     "static/media/8.jpg": "/bjflex31.indicateur.github.io/static/media/8.35ee8919ea545620a475.jpg",
     "index.html": "/bjflex31.indicateur.github.io/index.html",
     "main.bc6d9625.css.map": "/bjflex31.indicateur.github.io/static/css/main.bc6d9625.css.map",
-    "main.5ec1deab.js.map": "/bjflex31.indicateur.github.io/static/js/main.5ec1deab.js.map",
+    "main.6eb4b6ae.js.map": "/bjflex31.indicateur.github.io/static/js/main.6eb4b6ae.js.map",
     "41.dd2c9722.chunk.css.map": "/bjflex31.indicateur.github.io/static/css/41.dd2c9722.chunk.css.map",
-    "41.968df82f.chunk.js.map": "/bjflex31.indicateur.github.io/static/js/41.968df82f.chunk.js.map",
-    "24.1e58e2e1.chunk.js.map": "/bjflex31.indicateur.github.io/static/js/24.1e58e2e1.chunk.js.map",
+    "41.12670f1b.chunk.js.map": "/bjflex31.indicateur.github.io/static/js/41.12670f1b.chunk.js.map",
+    "24.8de1dc50.chunk.js.map": "/bjflex31.indicateur.github.io/static/js/24.8de1dc50.chunk.js.map",
     "9.d6469af2.chunk.js.map": "/bjflex31.indicateur.github.io/static/js/9.d6469af2.chunk.js.map",
     "1.06991b04.chunk.js.map": "/bjflex31.indicateur.github.io/static/js/1.06991b04.chunk.js.map",
     "188.46a9c346.chunk.js.map": "/bjflex31.indicateur.github.io/static/js/188.46a9c346.chunk.js.map",
@@ -105,11 +105,11 @@
     "638.fb2402d3.chunk.js.map": "/bjflex31.indicateur.github.io/static/js/638.fb2402d3.chunk.js.map",
     "177.01bd8749.chunk.js.map": "/bjflex31.indicateur.github.io/static/js/177.01bd8749.chunk.js.map",
     "13.e53086fd.chunk.js.map": "/bjflex31.indicateur.github.io/static/js/13.e53086fd.chunk.js.map",
-    "995.53bb66b4.chunk.js.map": "/bjflex31.indicateur.github.io/static/js/995.53bb66b4.chunk.js.map",
+    "809.42d11f0b.chunk.js.map": "/bjflex31.indicateur.github.io/static/js/809.42d11f0b.chunk.js.map",
     "442.5b303db1.chunk.js.map": "/bjflex31.indicateur.github.io/static/js/442.5b303db1.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.bc6d9625.css",
-    "static/js/main.5ec1deab.js"
+    "static/js/main.6eb4b6ae.js"
   ]
 }
