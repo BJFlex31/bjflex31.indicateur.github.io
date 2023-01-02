@@ -7,11 +7,15 @@ import {
   CChartPie,
   CChartPolarArea,
 } from '@coreui/react-chartjs'
-import { DocsCallout } from 'src/components'
 
 const CoreUIIcons = () => {
   return (
     <CRow>
+      <h3>Differents lieux de stockage</h3>
+      <div>
+        <ul> - Backup Clipper : NAS + cassettes + serveur physique</ul>
+        <ul> - Backup serveur : NAS + cassettes </ul>
+      </div>
       <CCol xs={13}>
         <CCard className="mb-4">
           <CCardHeader>Etat sauvegarde serveur</CCardHeader>

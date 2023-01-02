@@ -26,7 +26,7 @@ const _nav = [
       {
         component: CNavItem,
         name: 'Ordinateurs',
-        to: '/charts',
+        to: '/base/tables',
         badge: {
           color: 'info',
           text: 'PC',
