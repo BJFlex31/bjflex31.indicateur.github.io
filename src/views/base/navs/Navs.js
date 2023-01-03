@@ -1,396 +1,394 @@
-import React from 'react'
+import React, { useState } from 'react'
 import {
-  CRow,
-  CCol,
-  CCard,
-  CCardBody,
-  CCardHeader,
-  CDropdown,
-  CDropdownItem,
-  CDropdownMenu,
-  CDropdownToggle,
-  CNav,
   CNavItem,
   CNavLink,
+  CNav,
+  CTabContent,
+  CTabPane,
+  CCard,
+  CCardBody,
+  CCol,
+  CTable,
+  CTableBody,
+  CTableDataCell,
+  CTableHead,
+  CTableHeaderCell,
+  CTableRow,
 } from '@coreui/react'
-import { DocsExample } from 'src/components'
 
 const Navs = () => {
+  const [activeKey, setActiveKey] = useState(1)
   return (
-    <CRow>
-      <CCol xs={12}>
-        <CCard className="mb-4">
-          <CCardHeader>
-            <strong>React Navs</strong> <small>Base navs</small>
-          </CCardHeader>
-          <CCardBody>
-            <p className="text-medium-emphasis small">
-              The base <code>.nav</code> component is built with flexbox and provide a strong
-              foundation for building all types of navigation components. It includes some style
-              overrides (for working with lists), some link padding for larger hit areas, and basic
-              disabled styling.
-            </p>
-            <DocsExample href="components/nav#base-nav">
-              <CNav>
-                <CNavItem>
-                  <CNavLink href="#" active>
-                    Active
-                  </CNavLink>
-                </CNavItem>
-                <CNavItem>
-                  <CNavLink href="#">Link</CNavLink>
-                </CNavItem>
-                <CNavItem>
-                  <CNavLink href="#">Link</CNavLink>
-                </CNavItem>
-                <CNavItem>
-                  <CNavLink href="#" disabled>
-                    Disabled
-                  </CNavLink>
-                </CNavItem>
-              </CNav>
-            </DocsExample>
-            <p className="text-medium-emphasis small">
-              Classes are used throughout, so your markup can be super flexible. Use{' '}
-              <code>&lt;ul&gt;</code>s like above, <code>&lt;ol&gt;</code> if the order of your
-              items is important, or roll your own with a <code>&lt;nav&gt;</code> element. Because
-              the .nav uses display: flex, the nav links behave the same as nav items would, but
-              without the extra markup.
-            </p>
-            <DocsExample href="components/nav#base-nav">
-              <CNav component="nav">
-                <CNavLink href="#" active>
-                  Active
-                </CNavLink>
-                <CNavLink href="#">Link</CNavLink>
-                <CNavLink href="#">Link</CNavLink>
-                <CNavLink href="#" disabled>
-                  Disabled
-                </CNavLink>
-              </CNav>
-            </DocsExample>
-          </CCardBody>
-        </CCard>
-      </CCol>
-      <CCol xs={12}>
-        <CCard className="mb-4">
-          <CCardHeader>
-            <strong>React Navs</strong> <small>Horizontal alignment</small>
-          </CCardHeader>
-          <CCardBody>
-            <p className="text-medium-emphasis small">
-              Change the horizontal alignment of your nav with{' '}
-              <a href="https://coreui.io/docs/layout/grid/#horizontal-alignment">
-                flexbox utilities
-              </a>
-              . By default, navs are left-aligned, but you can easily change them to center or right
-              aligned.
-            </p>
-            <p className="text-medium-emphasis small">
-              Centered with <code>.justify-content-center</code>:
-            </p>
-            <DocsExample href="components/nav#horizontal-alignment">
-              <CNav className="justify-content-center">
-                <CNavItem>
-                  <CNavLink href="#" active>
-                    Active
-                  </CNavLink>
-                </CNavItem>
-                <CNavItem>
-                  <CNavLink href="#">Link</CNavLink>
-                </CNavItem>
-                <CNavItem>
-                  <CNavLink href="#">Link</CNavLink>
-                </CNavItem>
-                <CNavItem>
-                  <CNavLink href="#" disabled>
-                    Disabled
-                  </CNavLink>
-                </CNavItem>
-              </CNav>
-            </DocsExample>
-            <p className="text-medium-emphasis small">
-              Right-aligned with <code>.justify-content-end</code>:
-            </p>
-            <DocsExample href="components/nav#base-nav">
-              <CNav className="justify-content-end">
-                <CNavItem>
-                  <CNavLink href="#" active>
-                    Active
-                  </CNavLink>
-                </CNavItem>
-                <CNavItem>
-                  <CNavLink href="#">Link</CNavLink>
-                </CNavItem>
-                <CNavItem>
-                  <CNavLink href="#">Link</CNavLink>
-                </CNavItem>
-                <CNavItem>
-                  <CNavLink href="#" disabled>
-                    Disabled
-                  </CNavLink>
-                </CNavItem>
-              </CNav>
-            </DocsExample>
-          </CCardBody>
-        </CCard>
-      </CCol>
-      <CCol xs={12}>
-        <CCard className="mb-4">
-          <CCardHeader>
-            <strong>React Navs</strong> <small>Vertical</small>
-          </CCardHeader>
-          <CCardBody>
-            <p className="text-medium-emphasis small">
-              Stack your navigation by changing the flex item direction with the{' '}
-              <code>.flex-column</code> utility. Need to stack them on some viewports but not
-              others? Use the responsive versions (e.g., <code>.flex-sm-column</code>).
-            </p>
-            <DocsExample href="components/nav#vertical">
-              <CNav className="flex-column">
-                <CNavItem>
-                  <CNavLink href="#" active>
-                    Active
-                  </CNavLink>
-                </CNavItem>
-                <CNavItem>
-                  <CNavLink href="#">Link</CNavLink>
-                </CNavItem>
-                <CNavItem>
-                  <CNavLink href="#">Link</CNavLink>
-                </CNavItem>
-                <CNavItem>
-                  <CNavLink href="#" disabled>
-                    Disabled
-                  </CNavLink>
-                </CNavItem>
-              </CNav>
-            </DocsExample>
-          </CCardBody>
-        </CCard>
-      </CCol>
-      <CCol xs={12}>
-        <CCard className="mb-4">
-          <CCardHeader>
-            <strong>React Navs</strong> <small>Tabs</small>
-          </CCardHeader>
-          <CCardBody>
-            <p className="text-medium-emphasis small">
-              Takes the basic nav from above and adds the <code>variant=&#34;tabs&#34;</code> class
-              to generate a tabbed interface
-            </p>
-            <DocsExample href="components/nav#tabs">
-              <CNav variant="tabs">
-                <CNavItem>
-                  <CNavLink href="#" active>
-                    Active
-                  </CNavLink>
-                </CNavItem>
-                <CNavItem>
-                  <CNavLink href="#">Link</CNavLink>
-                </CNavItem>
-                <CNavItem>
-                  <CNavLink href="#">Link</CNavLink>
-                </CNavItem>
-                <CNavItem>
-                  <CNavLink href="#" disabled>
-                    Disabled
-                  </CNavLink>
-                </CNavItem>
-              </CNav>
-            </DocsExample>
-          </CCardBody>
-        </CCard>
-      </CCol>
-      <CCol xs={12}>
-        <CCard className="mb-4">
-          <CCardHeader>
-            <strong>React Navs</strong> <small>Pills</small>
-          </CCardHeader>
-          <CCardBody>
-            <p className="text-medium-emphasis small">
-              Take that same HTML, but use <code>variant=&#34;pills&#34;</code> instead:
-            </p>
-            <DocsExample href="components/nav#pills">
-              <CNav variant="pills">
-                <CNavItem>
-                  <CNavLink href="#" active>
-                    Active
-                  </CNavLink>
-                </CNavItem>
-                <CNavItem>
-                  <CNavLink href="#">Link</CNavLink>
-                </CNavItem>
-                <CNavItem>
-                  <CNavLink href="#">Link</CNavLink>
-                </CNavItem>
-                <CNavItem>
-                  <CNavLink href="#" disabled>
-                    Disabled
-                  </CNavLink>
-                </CNavItem>
-              </CNav>
-            </DocsExample>
-          </CCardBody>
-        </CCard>
-      </CCol>
-      <CCol xs={12}>
-        <CCard className="mb-4">
-          <CCardHeader>
-            <strong>React Navs</strong> <small>Fill and justify</small>
-          </CCardHeader>
-          <CCardBody>
-            <p className="text-medium-emphasis small">
-              Force your <code>.nav</code>&#39;s contents to extend the full available width one of
-              two modifier classes. To proportionately fill all available space with your{' '}
-              <code>.nav-item</code>s, use <code>layout=&#34;fill&#34;</code>. Notice that all
-              horizontal space is occupied, but not every nav item has the same width.
-            </p>
-            <DocsExample href="components/nav#fill-and-justify">
-              <CNav variant="pills" layout="fill">
-                <CNavItem>
-                  <CNavLink href="#" active>
-                    Active
-                  </CNavLink>
-                </CNavItem>
-                <CNavItem>
-                  <CNavLink href="#">Link</CNavLink>
-                </CNavItem>
-                <CNavItem>
-                  <CNavLink href="#">Link</CNavLink>
-                </CNavItem>
-                <CNavItem>
-                  <CNavLink href="#" disabled>
-                    Disabled
-                  </CNavLink>
-                </CNavItem>
-              </CNav>
-            </DocsExample>
-            <p className="text-medium-emphasis small">
-              For equal-width elements, use <code>layout=&#34;justified&#34;</code>. All horizontal
-              space will be occupied by nav links, but unlike the .nav-fill above, every nav item
-              will be the same width.
-            </p>
-            <DocsExample href="components/nav#fill-and-justify">
-              <CNav variant="pills" layout="justified">
-                <CNavItem>
-                  <CNavLink href="#" active>
-                    Active
-                  </CNavLink>
-                </CNavItem>
-                <CNavItem>
-                  <CNavLink href="#">Link</CNavLink>
-                </CNavItem>
-                <CNavItem>
-                  <CNavLink href="#">Link</CNavLink>
-                </CNavItem>
-                <CNavItem>
-                  <CNavLink href="#" disabled>
-                    Disabled
-                  </CNavLink>
-                </CNavItem>
-              </CNav>
-            </DocsExample>
-          </CCardBody>
-        </CCard>
-      </CCol>
-      <CCol xs={12}>
-        <CCard className="mb-4">
-          <CCardHeader>
-            <strong>React Navs</strong> <small>Working with flex utilities</small>
-          </CCardHeader>
-          <CCardBody>
-            <p className="text-medium-emphasis small">
-              If you need responsive nav variations, consider using a series of{' '}
-              <a href="https://coreui.io/docs/utilities/flex">flexbox utilities</a>. While more
-              verbose, these utilities offer greater customization across responsive breakpoints. In
-              the example below, our nav will be stacked on the lowest breakpoint, then adapt to a
-              horizontal layout that fills the available width starting from the small breakpoint.
-            </p>
-            <DocsExample href="components/nav#working-with-flex-utilities">
-              <CNav component="nav" variant="pills" className="flex-column flex-sm-row">
-                <CNavLink href="#" active>
-                  Active
-                </CNavLink>
-                <CNavLink href="#">Link</CNavLink>
-                <CNavLink href="#">Link</CNavLink>
-                <CNavLink href="#" disabled>
-                  Disabled
-                </CNavLink>
-              </CNav>
-            </DocsExample>
-          </CCardBody>
-        </CCard>
-      </CCol>
-      <CCol xs={12}>
-        <CCard className="mb-4">
-          <CCardHeader>
-            <strong>React Navs</strong> <small>Tabs with dropdowns</small>
-          </CCardHeader>
-          <CCardBody>
-            <DocsExample href="components/nav#tabs-with-dropdowns">
-              <CNav>
-                <CNavItem>
-                  <CNavLink href="#" active>
-                    Active
-                  </CNavLink>
-                </CNavItem>
-                <CDropdown variant="nav-item">
-                  <CDropdownToggle color="secondary">Dropdown button</CDropdownToggle>
-                  <CDropdownMenu>
-                    <CDropdownItem href="#">Action</CDropdownItem>
-                    <CDropdownItem href="#">Another action</CDropdownItem>
-                    <CDropdownItem href="#">Something else here</CDropdownItem>
-                  </CDropdownMenu>
-                </CDropdown>
-                <CNavItem>
-                  <CNavLink href="#">Link</CNavLink>
-                </CNavItem>
-                <CNavItem>
-                  <CNavLink href="#" disabled>
-                    Disabled
-                  </CNavLink>
-                </CNavItem>
-              </CNav>
-            </DocsExample>
-          </CCardBody>
-        </CCard>
-      </CCol>
-      <CCol xs={12}>
-        <CCard className="mb-4">
-          <CCardHeader>
-            <strong>React Navs</strong> <small>Pills with dropdowns</small>
-          </CCardHeader>
-          <CCardBody>
-            <DocsExample href="components/nav#pills-with-dropdowns">
-              <CNav variant="pills">
-                <CNavItem>
-                  <CNavLink href="#" active>
-                    Active
-                  </CNavLink>
-                </CNavItem>
-                <CDropdown variant="nav-item">
-                  <CDropdownToggle color="secondary">Dropdown button</CDropdownToggle>
-                  <CDropdownMenu>
-                    <CDropdownItem href="#">Action</CDropdownItem>
-                    <CDropdownItem href="#">Another action</CDropdownItem>
-                    <CDropdownItem href="#">Something else here</CDropdownItem>
-                  </CDropdownMenu>
-                </CDropdown>
-                <CNavItem>
-                  <CNavLink href="#">Link</CNavLink>
-                </CNavItem>
-                <CNavItem>
-                  <CNavLink href="#" disabled>
-                    Disabled
-                  </CNavLink>
-                </CNavItem>
-              </CNav>
-            </DocsExample>
-          </CCardBody>
-        </CCard>
-      </CCol>
-    </CRow>
+    <>
+      <CNav variant="tabs" role="tablist">
+        <CNavItem>
+          <CNavLink
+            href="javascript:void(0);"
+            active={activeKey === 1}
+            onClick={() => setActiveKey(1)}
+          >
+            Bureau T
+          </CNavLink>
+        </CNavItem>
+        <CNavItem>
+          <CNavLink
+            href="javascript:void(0);"
+            active={activeKey === 2}
+            onClick={() => setActiveKey(2)}
+          >
+            Bureau P
+          </CNavLink>
+        </CNavItem>
+        <CNavItem>
+          <CNavLink
+            href="javascript:void(0);"
+            active={activeKey === 3}
+            onClick={() => setActiveKey(3)}
+          >
+            Atelier
+          </CNavLink>
+        </CNavItem>
+        <CNavItem>
+          <CNavLink
+            href="javascript:void(0);"
+            active={activeKey === 4}
+            onClick={() => setActiveKey(4)}
+          >
+            Itinérant
+          </CNavLink>
+        </CNavItem>
+      </CNav>
+      <CTabContent>
+        <CTabPane role="tabpanel" aria-labelledby="home-tab" visible={activeKey === 1}>
+          <CCol xs={12}>
+            <CCard className="mb-4">
+              <CCardBody>
+                <CTable>
+                  <CTableHead>
+                    <CTableRow>
+                      <CTableHeaderCell scope="col">#</CTableHeaderCell>
+                      <CTableHeaderCell scope="col">Pièce</CTableHeaderCell>
+                      <CTableHeaderCell scope="col">Nom - Prenom</CTableHeaderCell>
+                      <CTableHeaderCell scope="col">Type</CTableHeaderCell>
+                      <CTableHeaderCell scope="col">Etat</CTableHeaderCell>
+                      <CTableHeaderCell scope="col">Date mise en route</CTableHeaderCell>
+                    </CTableRow>
+                  </CTableHead>
+                  <CTableBody>
+                    <CTableRow>
+                      <CTableHeaderCell scope="row">1</CTableHeaderCell>
+                      <CTableDataCell>Informatique</CTableDataCell>
+                      <CTableDataCell>Jérémy E</CTableDataCell>
+                      <CTableDataCell>Portable</CTableDataCell>
+                      <CTableDataCell>Très bon état</CTableDataCell>
+                      <CTableDataCell>Décembre 2021</CTableDataCell>
+                    </CTableRow>
+                    <CTableRow>
+                      <CTableHeaderCell scope="row">2</CTableHeaderCell>
+                      <CTableDataCell>Commercial</CTableDataCell>
+                      <CTableDataCell>Serge Q</CTableDataCell>
+                      <CTableDataCell>Portable + écran</CTableDataCell>
+                      <CTableDataCell>Très bon état</CTableDataCell>
+                      <CTableDataCell>2022</CTableDataCell>
+                    </CTableRow>
+                    <CTableRow>
+                      <CTableHeaderCell scope="row">3</CTableHeaderCell>
+                      <CTableDataCell>Commercial</CTableDataCell>
+                      <CTableDataCell>Franck G</CTableDataCell>
+                      <CTableDataCell>Portable + écran</CTableDataCell>
+                      <CTableDataCell>Ok</CTableDataCell>
+                      <CTableDataCell>N/A</CTableDataCell>
+                    </CTableRow>
+                    <CTableRow>
+                      <CTableHeaderCell scope="row">4</CTableHeaderCell>
+                      <CTableDataCell>Commercial</CTableDataCell>
+                      <CTableDataCell>Eric D</CTableDataCell>
+                      <CTableDataCell>Fixe + écran</CTableDataCell>
+                      <CTableDataCell>Ok</CTableDataCell>
+                      <CTableDataCell>N/A</CTableDataCell>
+                    </CTableRow>
+                    <CTableRow>
+                      <CTableHeaderCell scope="row">5</CTableHeaderCell>
+                      <CTableDataCell>Commercial</CTableDataCell>
+                      <CTableDataCell>Marie HB</CTableDataCell>
+                      <CTableDataCell>Portable + écran</CTableDataCell>
+                      <CTableDataCell>Ok</CTableDataCell>
+                      <CTableDataCell>2021</CTableDataCell>
+                    </CTableRow>
+                    <CTableRow>
+                      <CTableHeaderCell scope="row">6</CTableHeaderCell>
+                      <CTableDataCell>Commercial</CTableDataCell>
+                      <CTableDataCell>Honorine</CTableDataCell>
+                      <CTableDataCell>Portable + écran</CTableDataCell>
+                      <CTableDataCell>Très bon état</CTableDataCell>
+                      <CTableDataCell>2021</CTableDataCell>
+                    </CTableRow>
+                    <CTableRow>
+                      <CTableHeaderCell scope="row">7</CTableHeaderCell>
+                      <CTableDataCell>Facturation</CTableDataCell>
+                      <CTableDataCell>Claire S</CTableDataCell>
+                      <CTableDataCell>Portable + écran</CTableDataCell>
+                      <CTableDataCell>Très bon état</CTableDataCell>
+                      <CTableDataCell>2022</CTableDataCell>
+                    </CTableRow>
+                    <CTableRow>
+                      <CTableHeaderCell scope="row">8</CTableHeaderCell>
+                      <CTableDataCell>Directeur</CTableDataCell>
+                      <CTableDataCell>Didier J</CTableDataCell>
+                      <CTableDataCell>Tablette + écran</CTableDataCell>
+                      <CTableDataCell>Ok</CTableDataCell>
+                      <CTableDataCell>N/A</CTableDataCell>
+                    </CTableRow>
+                    <CTableRow>
+                      <CTableHeaderCell scope="row">9</CTableHeaderCell>
+                      <CTableDataCell>Achat</CTableDataCell>
+                      <CTableDataCell>Vincent M</CTableDataCell>
+                      <CTableDataCell>Fixe + 2 écrans</CTableDataCell>
+                      <CTableDataCell>REMPLACEMENT EN COURS</CTableDataCell>
+                      <CTableDataCell>N/A</CTableDataCell>
+                    </CTableRow>
+                    <CTableRow>
+                      <CTableHeaderCell scope="row">10</CTableHeaderCell>
+                      <CTableDataCell>Achat</CTableDataCell>
+                      <CTableDataCell>Noélie</CTableDataCell>
+                      <CTableDataCell>Portable + écran</CTableDataCell>
+                      <CTableDataCell>Très bon état</CTableDataCell>
+                      <CTableDataCell>2021</CTableDataCell>
+                    </CTableRow>
+                    <CTableRow>
+                      <CTableHeaderCell scope="row">11</CTableHeaderCell>
+                      <CTableDataCell>Achat</CTableDataCell>
+                      <CTableDataCell>Elisabeth R</CTableDataCell>
+                      <CTableDataCell>Fixe / portable + 2 écrans</CTableDataCell>
+                      <CTableDataCell>Fixe : à remplacer / portable : très bon état</CTableDataCell>
+                      <CTableDataCell>fixe : N/A / portable : 2021</CTableDataCell>
+                    </CTableRow>
+                    <CTableRow>
+                      <CTableHeaderCell scope="row">12</CTableHeaderCell>
+                      <CTableDataCell>Compta</CTableDataCell>
+                      <CTableDataCell>Sandrine S</CTableDataCell>
+                      <CTableDataCell>Portable + écran</CTableDataCell>
+                      <CTableDataCell>Très bon état</CTableDataCell>
+                      <CTableDataCell>2021</CTableDataCell>
+                    </CTableRow>
+                    <CTableRow>
+                      <CTableHeaderCell scope="row">13</CTableHeaderCell>
+                      <CTableDataCell>Compta</CTableDataCell>
+                      <CTableDataCell>Sylvie L</CTableDataCell>
+                      <CTableDataCell>Portable + écran</CTableDataCell>
+                      <CTableDataCell>Très bon état</CTableDataCell>
+                      <CTableDataCell>2021</CTableDataCell>
+                    </CTableRow>
+                  </CTableBody>
+                </CTable>
+              </CCardBody>
+            </CCard>
+          </CCol>
+        </CTabPane>
+        <CTabPane role="tabpanel" aria-labelledby="profile-tab" visible={activeKey === 2}>
+          <CCol xs={12}>
+            <CCard className="mb-4">
+              <CCardBody>
+                <CTable>
+                  <CTableHead>
+                    <CTableRow>
+                      <CTableHeaderCell scope="col">#</CTableHeaderCell>
+                      <CTableHeaderCell scope="col">Pièce</CTableHeaderCell>
+                      <CTableHeaderCell scope="col">Nom - Prenom</CTableHeaderCell>
+                      <CTableHeaderCell scope="col">Type</CTableHeaderCell>
+                      <CTableHeaderCell scope="col">Etat</CTableHeaderCell>
+                      <CTableHeaderCell scope="col">Date mise en route</CTableHeaderCell>
+                    </CTableRow>
+                  </CTableHead>
+                  <CTableBody>
+                    <CTableRow>
+                      <CTableHeaderCell scope="row">1</CTableHeaderCell>
+                      <CTableDataCell>Commercial</CTableDataCell>
+                      <CTableDataCell>Christine</CTableDataCell>
+                      <CTableDataCell>Portable</CTableDataCell>
+                      <CTableDataCell>Très bon état</CTableDataCell>
+                      <CTableDataCell>2021</CTableDataCell>
+                    </CTableRow>
+                  </CTableBody>
+                </CTable>
+              </CCardBody>
+            </CCard>
+          </CCol>
+        </CTabPane>
+        <CTabPane role="tabpanel" aria-labelledby="profile-tab" visible={activeKey === 3}>
+          <CCol xs={12}>
+            <CCard className="mb-4">
+              <CCardBody>
+                <CTable>
+                  <CTableHead>
+                    <CTableRow>
+                      <CTableHeaderCell scope="col">#</CTableHeaderCell>
+                      <CTableHeaderCell scope="col">Pièce</CTableHeaderCell>
+                      <CTableHeaderCell scope="col">Nom - Prenom</CTableHeaderCell>
+                      <CTableHeaderCell scope="col">Type</CTableHeaderCell>
+                      <CTableHeaderCell scope="col">Etat</CTableHeaderCell>
+                      <CTableHeaderCell scope="col">Date mise en route</CTableHeaderCell>
+                    </CTableRow>
+                  </CTableHead>
+                  <CTableBody>
+                    <CTableRow>
+                      <CTableHeaderCell scope="row">1</CTableHeaderCell>
+                      <CTableDataCell>BE</CTableDataCell>
+                      <CTableDataCell>Eric M</CTableDataCell>
+                      <CTableDataCell>Portable + écran</CTableDataCell>
+                      <CTableDataCell>Très bon état</CTableDataCell>
+                      <CTableDataCell>Re-paramétrage imprimante etiq</CTableDataCell>
+                    </CTableRow>
+                    <CTableRow>
+                      <CTableHeaderCell scope="row">2</CTableHeaderCell>
+                      <CTableDataCell>BE</CTableDataCell>
+                      <CTableDataCell>Donald T</CTableDataCell>
+                      <CTableDataCell>Fixe + écran</CTableDataCell>
+                      <CTableDataCell>Ok</CTableDataCell>
+                      <CTableDataCell>N/A</CTableDataCell>
+                    </CTableRow>
+                    <CTableRow>
+                      <CTableHeaderCell scope="row">3</CTableHeaderCell>
+                      <CTableDataCell>BE</CTableDataCell>
+                      <CTableDataCell>Kader B</CTableDataCell>
+                      <CTableDataCell>Fixe + écran</CTableDataCell>
+                      <CTableDataCell>a remplacer</CTableDataCell>
+                      <CTableDataCell>N/A</CTableDataCell>
+                    </CTableRow>
+                    <CTableRow>
+                      <CTableHeaderCell scope="row">4</CTableHeaderCell>
+                      <CTableDataCell>BE</CTableDataCell>
+                      <CTableDataCell>Ancien Daniel</CTableDataCell>
+                      <CTableDataCell>Fixe + écran</CTableDataCell>
+                      <CTableDataCell>Ok</CTableDataCell>
+                      <CTableDataCell>N/A</CTableDataCell>
+                    </CTableRow>
+                    <CTableRow>
+                      <CTableHeaderCell scope="row">5</CTableHeaderCell>
+                      <CTableDataCell>MAG</CTableDataCell>
+                      <CTableDataCell>Mag 1</CTableDataCell>
+                      <CTableDataCell>Fixe + écran</CTableDataCell>
+                      <CTableDataCell>Ok</CTableDataCell>
+                      <CTableDataCell>N/A</CTableDataCell>
+                    </CTableRow>
+                    <CTableRow>
+                      <CTableHeaderCell scope="row">6</CTableHeaderCell>
+                      <CTableDataCell>MAG</CTableDataCell>
+                      <CTableDataCell>MAG 2 Jean</CTableDataCell>
+                      <CTableDataCell>Fixe + écran</CTableDataCell>
+                      <CTableDataCell>Remplacement en cours</CTableDataCell>
+                      <CTableDataCell>N/A</CTableDataCell>
+                    </CTableRow>
+                    <CTableRow>
+                      <CTableHeaderCell scope="row">7</CTableHeaderCell>
+                      <CTableDataCell>Pointeuse</CTableDataCell>
+                      <CTableDataCell>all</CTableDataCell>
+                      <CTableDataCell>Fixe + écran</CTableDataCell>
+                      <CTableDataCell>a remplacer mais OK</CTableDataCell>
+                      <CTableDataCell>N/A</CTableDataCell>
+                    </CTableRow>
+                    <CTableRow>
+                      <CTableHeaderCell scope="row">8</CTableHeaderCell>
+                      <CTableDataCell>Soudure</CTableDataCell>
+                      <CTableDataCell>Kader 2</CTableDataCell>
+                      <CTableDataCell>Fixe + écran</CTableDataCell>
+                      <CTableDataCell>Ok</CTableDataCell>
+                      <CTableDataCell>N/A</CTableDataCell>
+                    </CTableRow>
+                    <CTableRow>
+                      <CTableHeaderCell scope="row">9</CTableHeaderCell>
+                      <CTableDataCell>Fléxible</CTableDataCell>
+                      <CTableDataCell>all</CTableDataCell>
+                      <CTableDataCell>Fixe + écran</CTableDataCell>
+                      <CTableDataCell>peut etre remplacer</CTableDataCell>
+                      <CTableDataCell>N/A</CTableDataCell>
+                    </CTableRow>
+                    <CTableRow>
+                      <CTableHeaderCell scope="row">10</CTableHeaderCell>
+                      <CTableDataCell>Tuyaux</CTableDataCell>
+                      <CTableDataCell>Majid 1 ancien</CTableDataCell>
+                      <CTableDataCell>Fixe + écran</CTableDataCell>
+                      <CTableDataCell>Ok</CTableDataCell>
+                      <CTableDataCell>N/A</CTableDataCell>
+                    </CTableRow>
+                    <CTableRow>
+                      <CTableHeaderCell scope="row">11</CTableHeaderCell>
+                      <CTableDataCell>Tuyaux</CTableDataCell>
+                      <CTableDataCell>Majid 2</CTableDataCell>
+                      <CTableDataCell>Fixe + écran</CTableDataCell>
+                      <CTableDataCell>Ok</CTableDataCell>
+                      <CTableDataCell>N/A</CTableDataCell>
+                    </CTableRow>
+                    <CTableRow>
+                      <CTableHeaderCell scope="row">12</CTableHeaderCell>
+                      <CTableDataCell>Tuyaux</CTableDataCell>
+                      <CTableDataCell>Stéphane N</CTableDataCell>
+                      <CTableDataCell>Fixe + écran</CTableDataCell>
+                      <CTableDataCell>Ok</CTableDataCell>
+                      <CTableDataCell>N/A</CTableDataCell>
+                    </CTableRow>
+                  </CTableBody>
+                </CTable>
+              </CCardBody>
+            </CCard>
+          </CCol>
+        </CTabPane>
+        <CTabPane role="tabpanel" aria-labelledby="profile-tab" visible={activeKey === 4}>
+          <CCol xs={12}>
+            <CCard className="mb-4">
+              <CCardBody>
+                <CTable>
+                  <CTableHead>
+                    <CTableRow>
+                      <CTableHeaderCell scope="col">#</CTableHeaderCell>
+                      <CTableHeaderCell scope="col">Pièce</CTableHeaderCell>
+                      <CTableHeaderCell scope="col">Nom - Prenom</CTableHeaderCell>
+                      <CTableHeaderCell scope="col">Type</CTableHeaderCell>
+                      <CTableHeaderCell scope="col">Etat</CTableHeaderCell>
+                      <CTableHeaderCell scope="col">Date mise en route</CTableHeaderCell>
+                    </CTableRow>
+                  </CTableHead>
+                  <CTableBody>
+                    <CTableRow>
+                      <CTableHeaderCell scope="row">1</CTableHeaderCell>
+                      <CTableDataCell>Commercial</CTableDataCell>
+                      <CTableDataCell>Gregory P</CTableDataCell>
+                      <CTableDataCell>Portable</CTableDataCell>
+                      <CTableDataCell>Très bon état</CTableDataCell>
+                      <CTableDataCell>2022</CTableDataCell>
+                    </CTableRow>
+                    <CTableRow>
+                      <CTableHeaderCell scope="row">2</CTableHeaderCell>
+                      <CTableDataCell>Commercial</CTableDataCell>
+                      <CTableDataCell>Mathieu C</CTableDataCell>
+                      <CTableDataCell>Portable</CTableDataCell>
+                      <CTableDataCell>Remplacement possible</CTableDataCell>
+                      <CTableDataCell>N/A</CTableDataCell>
+                    </CTableRow>
+                    <CTableRow>
+                      <CTableHeaderCell scope="row">3</CTableHeaderCell>
+                      <CTableDataCell>Commercial</CTableDataCell>
+                      <CTableDataCell>Stephan B</CTableDataCell>
+                      <CTableDataCell>Portable</CTableDataCell>
+                      <CTableDataCell>Ok</CTableDataCell>
+                      <CTableDataCell>N/A</CTableDataCell>
+                    </CTableRow>
+                    <CTableRow>
+                      <CTableHeaderCell scope="row">4</CTableHeaderCell>
+                      <CTableDataCell>Commercial</CTableDataCell>
+                      <CTableDataCell>Ronan B</CTableDataCell>
+                      <CTableDataCell>Portable</CTableDataCell>
+                      <CTableDataCell>Ok</CTableDataCell>
+                      <CTableDataCell>N/A</CTableDataCell>
+                    </CTableRow>
+                  </CTableBody>
+                </CTable>
+              </CCardBody>
+            </CCard>
+          </CCol>
+        </CTabPane>
+      </CTabContent>
+    </>
   )
 }
 

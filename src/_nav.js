@@ -26,7 +26,7 @@ const _nav = [
       {
         component: CNavItem,
         name: 'Ordinateurs',
-        to: '/base/tables',
+        to: '/base/navs',
         badge: {
           color: 'info',
           text: 'PC',
@@ -45,7 +45,7 @@ const _nav = [
   },
   {
     component: CNavGroup,
-    name: 'Projets',
+    name: 'Tâches/Projets',
     icon: <CIcon icon={cilClipboard} customClassName="nav-icon" />,
     items: [
       {
@@ -60,11 +60,25 @@ const _nav = [
       {
         component: CNavItem,
         name: 'En cours',
-        to: '/base/tables',
+        to: '/base/accordion',
         badge: {
           color: 'danger',
           text: 'DEV',
         },
+      },
+      {
+        component: CNavItem,
+        name: 'Récap des tâches',
+        to: '/base/forms',
+        badge: {
+          color: 'info',
+          text: 'DEV',
+        },
+      },
+      {
+        component: CNavItem,
+        name: 'Stats missions',
+        to: '/base/formss',
       },
     ],
   },

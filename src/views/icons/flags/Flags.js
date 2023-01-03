@@ -1,12 +1,6 @@
 import React from 'react'
 import { CCard, CCardBody, CCol, CCardHeader, CRow } from '@coreui/react'
-import {
-  CChartBar,
-  CChartDoughnut,
-  CChartLine,
-  CChartPie,
-  CChartPolarArea,
-} from '@coreui/react-chartjs'
+import { CChartBar } from '@coreui/react-chartjs'
 
 const CoreUIIcons = () => {
   return (
@@ -40,7 +34,7 @@ const CoreUIIcons = () => {
                   {
                     label: '1 : sauvegarde fonctionnel / 0 : sauvegarde corrompue',
                     backgroundColor: '#36a9e1',
-                    data: [1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 0],
+                    data: [1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1],
                   },
                 ],
               }}
@@ -73,7 +67,7 @@ const CoreUIIcons = () => {
                   {
                     label: '1 : sauvegarde fonctionnel / 0 : sauvegarde corrompue',
                     backgroundColor: '#153767',
-                    data: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0],
+                    data: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
                   },
                 ],
               }}
