@@ -252,7 +252,7 @@ const Navs = () => {
                       <CTableDataCell>BE</CTableDataCell>
                       <CTableDataCell>Kader B</CTableDataCell>
                       <CTableDataCell>Fixe + écran</CTableDataCell>
-                      <CTableDataCell>a remplacer</CTableDataCell>
+                      <CTableDataCell>Ok</CTableDataCell>
                       <CTableDataCell>N/A</CTableDataCell>
                     </CTableRow>
                     <CTableRow>
@@ -284,7 +284,7 @@ const Navs = () => {
                       <CTableDataCell>Pointeuse</CTableDataCell>
                       <CTableDataCell>all</CTableDataCell>
                       <CTableDataCell>Fixe + écran</CTableDataCell>
-                      <CTableDataCell>a remplacer mais OK</CTableDataCell>
+                      <CTableDataCell>Ok</CTableDataCell>
                       <CTableDataCell>N/A</CTableDataCell>
                     </CTableRow>
                     <CTableRow>
@@ -300,7 +300,7 @@ const Navs = () => {
                       <CTableDataCell>Fléxible</CTableDataCell>
                       <CTableDataCell>all</CTableDataCell>
                       <CTableDataCell>Fixe + écran</CTableDataCell>
-                      <CTableDataCell>peut etre remplacer</CTableDataCell>
+                      <CTableDataCell>Ok</CTableDataCell>
                       <CTableDataCell>N/A</CTableDataCell>
                     </CTableRow>
                     <CTableRow>
@@ -362,7 +362,7 @@ const Navs = () => {
                       <CTableDataCell>Commercial</CTableDataCell>
                       <CTableDataCell>Mathieu C</CTableDataCell>
                       <CTableDataCell>Portable</CTableDataCell>
-                      <CTableDataCell>Remplacement possible</CTableDataCell>
+                      <CTableDataCell>a remplacer</CTableDataCell>
                       <CTableDataCell>N/A</CTableDataCell>
                     </CTableRow>
                     <CTableRow>
